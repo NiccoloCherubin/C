@@ -18,7 +18,6 @@ void main()
             if (numero > 5)
             {
                 somma = somma + numero;
-
             }
         }
         else
