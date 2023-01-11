@@ -8,7 +8,7 @@
 #include <stdio.h>
 void main()
 {
-    const int sconto1 = 10, sconto2 = 20, sconto3 = 30;
+    const float sconto1 = 0.1, sconto2 = 0.2, sconto3 = 0.3;
     float importo, totale, sconto;
     int risposta;
     do
@@ -20,15 +20,15 @@ void main()
         } while (importo <= 0);
         if (importo <= 500)
         {
-            sconto = importo / sconto1;
+            sconto = importo * sconto1;
         }
         else if (importo <= 1000)
         {
-            sconto = importo / sconto2;
+            sconto = importo * sconto2;
         }
         else if (importo >= 1001)
         {
-            sconto = importo / sconto3;
+            sconto = importo * sconto3;
         }
         totale = importo - sconto;
         printf("\n Lo sconto è di %f", sconto);
