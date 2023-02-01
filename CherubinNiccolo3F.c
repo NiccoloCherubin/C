@@ -43,5 +43,5 @@ void main()
     printf("\n la somma totale di tutti i prezzi incrementati equivale a %2.f", somma);
     printf("\n la media totale di tutti i prezzi incrementati equivale a %2.f", media);
     printf("\n la somma totale di tutti i prezzi incrementati superiori a %d equivale a %2.f", min, somma50);
-    printf("\n la media totale di tutti i prezzi incrementati superiori a %d equivale a %2.f", min, media);
+    printf("\n la media totale di tutti i prezzi incrementati superiori a %d equivale a %2.f", min, media50);
 }
