@@ -2,7 +2,7 @@
 #include <string.h>
 int main(int argc, char *argv[])
 {
-    char nome[30]; // hanno /0 alla fine
+    char nome[30]; // hanno \0 alla fine = delimitatore stringa
     int i = 0;
     printf("Inserisci il tuo nome \n");
     scanf("%s", nome); // no & perché puntatori
