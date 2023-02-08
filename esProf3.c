@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
         // per dopo
         if (i == 0)
         {
-            min = prezzo;
+            max = prezzo; 
         }
         
         // calcolo somme
