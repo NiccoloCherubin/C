@@ -14,13 +14,15 @@ int main(int argc, char *argv[])
     printf("La stringa è lunga %d \n", i);
     if (strcmp(stringa1, stringa2) == 0) // verifico se sono uguali con string compare
     {
-        printf("le stringhe sono uguali");
+        printf("le stringhe sono uguali \n");
     }
     else
     {
-        printf("le stringhe sono diverse");
+        printf("le stringhe sono diverse \n");
     }
     strcat(stringa1, stringa2);
-    printf("La stringa concatenata è : %s", stringa1);
+    printf("La stringa concatenata è : %s \n", stringa1);
+    strcpy(stringa1, stringa2); // string copy(destinazione, fonte)
+    printf("stringa copiata è: %s \n", stringa1);
     return 0;
 }
