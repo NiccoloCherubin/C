@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
     {
         printf("le stringhe sono diverse \n");
     }
-    strcat(stringa1, stringa2);
+    strcat(stringa1, stringa2); // concatena stringhe
     printf("La stringa concatenata è : %s \n", stringa1);
     strcpy(stringa1, stringa2); // string copy(destinazione, fonte)
     printf("stringa copiata è: %s \n", stringa1);
