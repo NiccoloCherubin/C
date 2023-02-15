@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            if (str[i] != 'a' || str[i] != 'e' || str[i] != 'i' || str[i] != 'o' || str[i] != 'u' && (str[i] > 'a' || str[i] < 'z')) // per codice ascii (compreso tra lettere)
+            if (str[i] != 'a' || str[i] != 'e' || str[i] != 'i' || str[i] != 'o' || str[i] != 'u' && (str[i] > 'a' && str[i] < 'z')) // per codice ascii (compreso tra lettere)
             {
                 cons++;
             }
@@ -28,9 +28,10 @@ int main(int argc, char *argv[])
                 num++;
             }
         }
-    }
+        
         printf("Le vocali sono %d \n", voc);
         printf("Le consonanti sono %d \n", cons);
         printf("I numeri sono %d \n", num);
         return 0;
+    }
     }
