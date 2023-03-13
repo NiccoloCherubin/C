@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main(int argc, char *argv[])
+{
+
+	int n1, n2, i;
+	do
+	{
+
+		do
+		{
+			printf("Inserisci un numero maggiore o uguale ad 1 : \n ");
+			scanf("%d", &n1);
+		} while (n1 < 0);
+
+		do
+		{
+			printf("Inserisci un numero maggiore o uguale ad 1 : \n");
+			scanf("%d", &n2);
+		} while (n2 < 0);		
+	} while (n2 <= n1);
+
+	i = n1;
+	do
+	{
+		printf("%d\n", i);
+		i = i + 1;
+	} while (i < n2);
+
+	return 0;
+}
