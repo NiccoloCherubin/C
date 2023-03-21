@@ -6,8 +6,12 @@ int main(int argc, char *argv[])
     do
     {
         printf("Inserire un numero maggiore di 0 \n");
-        scanf("%d", N);
+        scanf("%d", &N);
     } while (N <= 0);
+    if (N % 2 == 1)
+    {
+        N--; // lo rendo pari
+    }
     do
     {
         somma += N;
