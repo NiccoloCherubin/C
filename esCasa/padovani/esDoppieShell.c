@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     }
     else
     {
-        for (int i = 0; i < argc - 1; i++)
+        for (int i = 0; i < argc ; i++)
         {
             if (argv[2][i] == argv[2][i + 1]) // verifico se ci sono doppie
             {
