@@ -5,17 +5,15 @@ int main(int argc, char *argv[])
 {
     if (argc != 3)
     {
-        printf("Errore argomenti");
+        printf("Errore argomenti \n");
     }
     else
-    {
-        char stringa[50] = argv[2];
-        char carattere = argv[3];
+    {        
         for (int i = 0; i < argc - 1; i++) // - 1 per guardare solo la stringa
         {
-            if (stringa[i] == carattere)
+            if (argv[2][i] == argv[3])
             {
-                stringa[i] = "";
+                argv[2][i] = "";
             }
         }
         // stampo stringa finale
