@@ -9,16 +9,17 @@ int main(int argc, char *argv[])
     }
     else
     {
-        for (int i = 0; i < strlen(argv[1]) - 1; i++)
+        char supporto[50];
+        int cont = 0;
+        for (int i = 0; i < strlen(argv[1]); i++)
         {
-            if (argv[1][i] == argv[2][0])
+            if (argv[1][i] != argv[2][0])
             {
-                argv[1][i] = argv[1][i + 1];
+                supporto[cont] = argv[1][i];
+                cont++;
             }
-        }
-        argv[1][strlen(argv[1]-1)] = ' ';
-
-        printf("\n %s", argv[1]);
+        }        
+            printf("\n %s", supporto);            
     }
     return 0;
 }
