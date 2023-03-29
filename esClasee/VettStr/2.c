@@ -9,8 +9,8 @@ int main(int argc, char *argv[])
     }
     else
     {
-        char supporto[50];
-        int cont = 0;
+        char supporto[50]; // stringa di supporto
+        int cont = 0; // contatore perla stringa di supporto    
         for (int i = 0; i < strlen(argv[1]); i++)
         {
             if (argv[1][i] != argv[2][0])
