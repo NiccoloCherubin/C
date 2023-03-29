@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
                 cont++;
             }
         }        
-            printf("\n %s", supporto);            
+            printf("%s", supporto);            
     }
     return 0;
 }
