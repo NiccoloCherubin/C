@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int Ricerca(int argc, char *argv[], int n, int start)
+int Ricerca(int argc, char *argv[], int n)
 {
-    for (int i = start; i < argc; i++)
+    for (int i = 1; i < argc; i++)
     {
         if (atoi(argv[i]) == n)
         {
@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     int numero;
     printf("Inserisci il numero da cercare nell'array: ");
     scanf("%d", &numero);
-    numero = Ricerca(argc, argv, numero, 1);
+    numero = Ricerca(argc, argv, numero);
     if (numero == -1)
     {
         printf("Numero non trovato\n");
