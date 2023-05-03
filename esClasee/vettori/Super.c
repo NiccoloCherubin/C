@@ -47,12 +47,17 @@ void Menu(int scelta)
     printf("Premere 0 per terminare\n");
 }
 void StampaArr(int *arr, int n)
+
 {
     printf("Elementi array : \n");
     for (int i = 0; i < n; i++)
     {
         printf("%d \n", *arr + i);
     }
+}
+void InsertCoda(int *arr, int numero, int posizione)
+{
+    *(arr + posizione) = numero;
 }
 int main(int argc, char *argv[])
 {
@@ -64,7 +69,6 @@ int main(int argc, char *argv[])
     n = Riempi(array, n);
     do
     {
-        printf("%d \n", n);
         Menu(scelta);
         scanf("%d", &scelta);
         if (scelta == 0)
@@ -81,6 +85,9 @@ int main(int argc, char *argv[])
                 StampaArr(array, n);
                 break;
             case 2:
+                printf("Inserire numero da mettere in coda \n");
+                int numero = scanf("%d", &numero);
+                n++;
                 break;
             case 3:
                 break;
