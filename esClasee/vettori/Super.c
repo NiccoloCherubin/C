@@ -8,7 +8,7 @@ int Controllo(int a, int cont)
 {
     do
     {
-        printf("Inserisci elemento %d \n", cont);
+        printf("Inserisci elemento %d \n", cont + 1);
         scanf("%d", &a);
         if (a == -1)
         {
