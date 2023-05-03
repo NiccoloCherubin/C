@@ -2,12 +2,16 @@
 #include <stdlib.h>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 int indice(int argc, char *argv[], int n, int start)
 =======
 int Ricerca(int argc, char *argv[], int n, int start)
 >>>>>>> 55f13cd7196c85e5e1243e51ae29969d2401b2bd
+=======
+int Ricerca(int argc, char *argv[], int n)
+>>>>>>> 1486783a6b5c477a66698a955cdd7c96c4cf090f
 {
-    for (int i = start; i < argc; i++)
+    for (int i = 1; i < argc; i++)
     {
         if (atoi(argv[i]) == n)
         {
@@ -29,7 +33,7 @@ int main(int argc, char *argv[])
     int numero;
     printf("Inserisci il numero da cercare nell'array: ");
     scanf("%d", &numero);
-    numero = Ricerca(argc, argv, numero, 1);
+    numero = Ricerca(argc, argv, numero);
     if (numero == -1)
 >>>>>>> 55f13cd7196c85e5e1243e51ae29969d2401b2bd
     {
