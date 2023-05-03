@@ -34,11 +34,40 @@ int Riempi(int array[], int n)
     }
     return n;
 }
+int Menu(int scelta)
+{
+    printf("Premere 1 per mostrare contenuto array \n");
+    printf("Premere 2 per Inserire elemento in coda \n");
+    printf("Premere 3 per modificare un elemento, se presente \n");
+    printf("Premere 4 per eliminare un elemento, se presente \n");
+    printf("Premere 5 per ricercare un elemento \n");
+    printf("Premere 6 per per inserire un elemento in una certa posizione \n");
+    printf("Premere 7 per mostrare contenuto dell'array all'inverso \n");
+    printf("Premere 8 per per mostrare il valore massimo nell'array \n");
+    printf("Premere 0 per terminare\n");
+    scanf("%d", &scelta);
+}
 int main(int argc, char *argv[])
 {
     // mostra array prima del menù
     int array[SHRT_MAX];
     int n;
+    int scelta;
     n = Riempi(array, n);
+    printf("%d", n);
+    do
+    {
+        scelta = Menu(scelta);
+        if (scelta == 0)
+        {
+            printf("Programma finito");
+            break;
+        }
+        else
+        {
+            // fare switch
+        }
+    } while (1);
+
     return 0;
 }
