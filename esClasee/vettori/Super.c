@@ -16,7 +16,7 @@ int Controllo(int a, int cont)
         }
     } while (a < 0);
 }
-int Riempi(int array[], int *p)
+int Riempi(int array[], int n)
 {
     int temp; // variabile temporanea per non sporcare array
     for (int i = 0; i < SHRT_MAX; i++)
@@ -30,9 +30,9 @@ int Riempi(int array[], int *p)
         {
             array[i] = temp;
         }
-        *p++;
+        n++;
     }
-    return *p;
+    return n;
 }
 void Menu(int scelta)
 {
@@ -46,6 +46,14 @@ void Menu(int scelta)
     printf("Premere 8 per per mostrare il valore massimo nell'array \n");
     printf("Premere 0 per terminare\n");
 }
+void StampaArr(int *arr, int n)
+{
+    printf("Elementi array : \n");
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d \n", *arr + i);
+    }
+}
 int main(int argc, char *argv[])
 {
     // mostra array prima del menù
@@ -53,9 +61,10 @@ int main(int argc, char *argv[])
     int n;
     int *p = &n;
     int scelta;
-    n = Riempi(array, p);
+    n = Riempi(array, n);
     do
     {
+        printf("%d \n", n);
         Menu(scelta);
         scanf("%d", &scelta);
         if (scelta == 0)
@@ -69,6 +78,7 @@ int main(int argc, char *argv[])
             switch (scelta)
             {
             case 1:
+                StampaArr(array, n);
                 break;
             case 2:
                 break;
