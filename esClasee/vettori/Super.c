@@ -83,6 +83,15 @@ void Elimination(int *arr, int posizione, int *dim)
     }
     *dim--;
 }
+int ControlloPosition(int posizione, int *dim)
+{
+
+    while (posizione < 0 || posizione > *dim)
+    {
+        printf("Posizione non valida. Reinserirla");
+        scanf("%d", &posizione);
+    }
+}
 int main(int argc, char *argv[])
 {
     // mostra array prima del menù
@@ -161,6 +170,12 @@ int main(int argc, char *argv[])
                 }
                 break;
             case 6:
+                printf("Inserire elemento da aggiungere \n");
+                scanf("%d", &numero);
+                printf("In che posizione aggiungere questo elemento \n");
+                scanf("%d", &posizione);
+                ControlloPosition(posizione, &n);
+                CambioElemento(array, posizione, &n);
                 break;
             case 7:
                 break;
