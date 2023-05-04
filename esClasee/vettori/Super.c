@@ -73,12 +73,21 @@ int Ricerca(int *arr, int *ricercato, int dim)
 }
 void CambioElemento(int *arr, int posizione, int *numero)
 {
-    printf("%d \n", *numero);
     *(arr + posizione) = *numero;
+}
+void Elimination(int *arr, int posizione, int *dim)
+{
+    for (int i = posizione; i < *(dim - 1); i++)
+    {
+        *(arr + i) = *(arr + i + 1);
+    }
+    *dim--;
 }
 int main(int argc, char *argv[])
 {
     // mostra array prima del menù
+    int posizione;
+    int ricercato;
     int array[SHRT_MAX];
     int n;
     int *p = &n;
@@ -109,8 +118,8 @@ int main(int argc, char *argv[])
                 break;
             case 3:
                 printf("Inserire numero da cambiare \n");
-                int ricercato = scanf("%d", &ricercato);
-                int posizione = Ricerca(array, &ricercato, n);
+                ricercato = scanf("%d", &ricercato);
+                posizione = Ricerca(array, &ricercato, n);
                 printf("%d\n", posizione);
                 if (posizione != -1)
                 {
@@ -125,8 +134,31 @@ int main(int argc, char *argv[])
                 }
                 break;
             case 4:
+                printf("Inserire numero da eliminare \n");
+                ricercato = scanf("%d", &ricercato);
+                posizione = Ricerca(array, &ricercato, n);
+                if (posizione != -1)
+                {
+                    Elimination(array, posizione, &n);
+                    printf("Elemento eliminato con successo \n");
+                }
+                else
+                {
+                    printf("Elemento non presente \n");
+                }
                 break;
             case 5:
+                printf("Inserire numero da cercare \n");
+                ricercato = scanf("%d", &ricercato);
+                posizione = Ricerca(array, &ricercato, n);
+                if (posizione != -1)
+                {
+                    printf("Elemento presente \n");
+                }
+                else
+                {
+                    printf("Elemento non presente \n");
+                }
                 break;
             case 6:
                 break;
