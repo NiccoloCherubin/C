@@ -92,6 +92,14 @@ int ControlloPosition(int posizione, int *dim)
         scanf("%d", &posizione);
     }
 }
+void ReverseArr(int *arr, int *dim)
+{
+    printf("Reverse array: \n");
+    for (int i = *dim - 1; i >= 0; i--)
+    {
+        printf("%d \n", *(arr + i));
+    }
+}
 int main(int argc, char *argv[])
 {
     // mostra array prima del menù
@@ -178,6 +186,7 @@ int main(int argc, char *argv[])
                 CambioElemento(array, posizione, &n);
                 break;
             case 7:
+                ReverseArr(array, &n);
                 break;
             case 8:
                 break;
