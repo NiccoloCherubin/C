@@ -100,6 +100,18 @@ void ReverseArr(int *arr, int *dim)
         printf("%d \n", *(arr + i));
     }
 }
+int MaxArr(int *arr, int *dim)
+{
+    int max = 0;
+    for (int i = 0; i <= *dim; i++)
+    {
+        if (*(arr + i) > max)
+        {
+            max = *(arr + i);
+        }        
+    }
+    return max;
+}
 int main(int argc, char *argv[])
 {
     // mostra array prima del menù
@@ -189,6 +201,7 @@ int main(int argc, char *argv[])
                 ReverseArr(array, &n);
                 break;
             case 8:
+                printf("Il numero massimo è %d \n", MaxArr(array, &n));
                 break;
             }
         }
