@@ -55,9 +55,26 @@ void StampaArr(int *arr, int n)
         printf("%d \n", *arr + i);
     }
 }
-void InsertCoda(int *arr, int numero, int posizione)
+void InsertCoda(int *arr, int numero, int dim)
 {
-    *(arr + posizione) = numero;
+    *(arr + dim) = numero;
+}
+int Ricerca(int *arr, int *ricercato, int dim)
+{
+    int pos = -1;
+    for (int i = 0; i < dim; i++)
+    {
+        if (*(arr + i) == *ricercato)
+        {
+            pos = i;
+        }
+    }
+    return pos;
+}
+void CambioElemento(int *arr, int posizione, int *numero)
+{
+    printf("%d \n", *numero);
+    *(arr + posizione) = *numero;
 }
 int main(int argc, char *argv[])
 {
@@ -65,7 +82,7 @@ int main(int argc, char *argv[])
     int array[SHRT_MAX];
     int n;
     int *p = &n;
-    int scelta;
+    int scelta, numero;
     n = Riempi(array, n);
     do
     {
@@ -86,10 +103,26 @@ int main(int argc, char *argv[])
                 break;
             case 2:
                 printf("Inserire numero da mettere in coda \n");
-                int numero = scanf("%d", &numero);
+                numero = scanf("%d", &numero);
+                InsertCoda(array, numero, n);
                 n++;
                 break;
             case 3:
+                printf("Inserire numero da cambiare \n");
+                int ricercato = scanf("%d", &ricercato);
+                int posizione = Ricerca(array, &ricercato, n);
+                printf("%d\n", posizione);
+                if (posizione != -1)
+                {
+                    printf("Inserire numero con cui sostituire il precedente \n");
+                    numero = scanf("%d", &numero);
+                    CambioElemento(array, posizione, &numero);
+                    printf("Cambiamento avvenuto con successo \n");
+                }
+                else
+                {
+                    printf("Il numero inserito non è presente nell'array \n");
+                }
                 break;
             case 4:
                 break;
