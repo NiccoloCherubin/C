@@ -7,7 +7,7 @@ void Controllo(int *p)
     while (*p <= 0)
     {
         printf("Il numero deve essere maggiore di zero. Reinserire \n");
-        scanf("%d", &*p);
+        scanf("%d", p);
     }
 }
 void FillArr(int array[], int lunghezza)
@@ -41,7 +41,7 @@ int Maggiore(int array[], int lunghezza)
 int NumeroFrequente(int array[], int lunghezza)
 {
     int temp = 0;
-    int cont[lunghezza]; // non credo un utente possa mettere un numero più grande
+    int cont[lunghezza];
     for (int i = 0; i < lunghezza; i++)
     {
         temp = array[i];
