@@ -42,6 +42,12 @@ int NumeroFrequente(int array[], int lunghezza)
 {
     int temp = 0;
     int cont[lunghezza];
+    // fixed
+    for (int i = 0; i < lunghezza; i++)
+    {
+        cont[i] = 0;
+    }
+    // fixed
     for (int i = 0; i < lunghezza; i++)
     {
         temp = array[i];
@@ -53,7 +59,7 @@ int NumeroFrequente(int array[], int lunghezza)
             }
         }
     }
-    temp = Maggiore(array, lunghezza);
+    temp = Maggiore(cont, lunghezza); // fixed
     return temp;
 }
 int main(int argc, char *argv[])
