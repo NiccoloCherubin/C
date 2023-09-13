@@ -5,7 +5,7 @@
 void Funzione(char str1[], char str2[])
 {
     char *p = str2;
-    for (int i = 0; i < strlen(str1); i++)
+    for (int i = 1; i <= strlen(str1); i++)
     {
         if (isdigit(str1[i]))
         {
