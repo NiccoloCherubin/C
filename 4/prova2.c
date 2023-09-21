@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("Il numeri non è compreso tra i limiti \n");
+            printf("Il numero non è compreso tra i limiti \n");
         }        
     }
     //stampa della somma dei numeri
