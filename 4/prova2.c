@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main(int argc, char *argv[])
-{
+{   
 
     int limite1, limite2, n, somma = 0, i = 0;
     const short min = 30, max = 50;
