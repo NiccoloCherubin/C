@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
             printf("Il primo limite non è compreso tra i 30 e 50\n");
             return -1;
         }
-        else if ((atoi(argv[2]) < min ||atoi(argv[2]) > max))
+        else if ((atoi(argv[2]) < min || atoi(argv[2]) > max))
         {
             printf("Il secondo limite non è compreso tra i 30 e 50 \n");
             return -1;
