@@ -10,12 +10,12 @@ int main(int argc, char *argv[])
     {
         if (atoi(argv[1]) < min || atoi(argv[1]) > max) // atoi converte in intero
         {
-            printf("Il primo limite non è compreso tra i 30 e 50\n");
+            printf("Il primo limite non è compreso tra 30 e 50\n");
             return -1;
         }
         else if ((atoi(argv[2]) < min || atoi(argv[2]) > max))
         {
-            printf("Il secondo limite non è compreso tra i 30 e 50 \n");
+            printf("Il secondo limite non è compreso tra 30 e 50 \n");
             return -1;
         }
     }
