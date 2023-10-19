@@ -35,7 +35,7 @@ void sconto(biblioteca *libri, int lunghezza, int scontoPercentuale)
 int main(int argc, char *argv[])
 {
 
-    const int lunghezza = 1;
+    const int lunghezza = 2;
     biblioteca libri[lunghezza];
     int scontoPercentuale;
     for (int i = 0; i < lunghezza; i++)
