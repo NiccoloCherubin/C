@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define BUFFER_DIM 1024
+#define BUFFER_DIM 4
 int main(int argc, char *argv[])
 {
     FILE *origine, *destinazione; // origine legge dati e destinazione scrive dati
