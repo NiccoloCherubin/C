@@ -5,7 +5,7 @@
 
 
 TEST(operations,somma){
-    EXPECT_TRUE(add(3,5)==8);
+    EXPECT_TRUE(add(3,5)==9);
 }
 TEST(operations,sottrazione){
     EXPECT_TRUE(sub(3,5)==-2);
