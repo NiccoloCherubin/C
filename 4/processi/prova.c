@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-int p;     // permette di gestire padre e figlio.
+int pFuori;     // permette di gestire padre e figlio.
 int main() // nasce processo padre
 {
     // FORK
@@ -12,14 +12,14 @@ int main() // nasce processo padre
     //  p nel figlio = 0
 
     // pc(program counter) segna indirizzo informazione successiva
-    p = fork(); // padre genera figlio
-    if (p != 0) // quello che fa padre
+    pFuori = fork(); // padre genera figlio
+    if (pFuori != 0) // quello che fa padre
     {
-        printf("\nSONO IL PADRE  p=%d PID= %d PID padre = %d", p, getpid(), getppid());
+        printf("\nSONO IL PADRE  p=%d PID= %d PID padre = %d", pFuori, getpid(), getppid());
     }
     else // figlio
     {
-        printf("\nSONO IL FIGLIO p=%d PID = %d PID padre = %d\n", p, getpid(), getppid());
+        printf("\nSONO IL FIGLIO p=%d PID = %d PID padre = %d\n", pFuori, getpid(), getppid());
     }
 
     return 0;
