@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <unistd.h>
-
 int main()
 {
     int pid_qui, pid_quo, pid_qua;
