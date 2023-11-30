@@ -23,8 +23,9 @@ int main() // nasce processo padre
     else // padre
     {
         
-        printf("\n 2_SONO IL PADRE  p=%d PID= %d PID padre = %d\n", p, getpid(), getppid());
         printf("3_Attendo mio figlio %d %d \n",WEXITSTATUS(status), wait(&status));
+        printf("\n 2_SONO IL PADRE  p=%d PID= %d PID padre = %d\n", p, getpid(), getppid());
+        printf("4_Attendo mio figlio %d %d \n",WEXITSTATUS(status), wait(&status));
     }
 
     return 0;
