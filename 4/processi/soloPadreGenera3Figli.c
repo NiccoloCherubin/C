@@ -37,6 +37,7 @@ int main()
         }
         else
         {
+            
             // Codice del processo padre
             // Creazione del processo figlio Qua
             pid_qua = fork();

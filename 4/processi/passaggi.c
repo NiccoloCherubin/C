@@ -5,6 +5,7 @@
 int p;     // permette di gestire padre e figlio.
 int main() // nasce processo padre
 {
+    int status;
     // FORK
     // processo padre e figlio
     //  si visualizzano PID a vicenda
@@ -14,13 +15,16 @@ int main() // nasce processo padre
 
     // pc(program counter) segna indirizzo informazione successiva
     p = fork(); // padre genera figlio
-    if (p != 0) // quello che fa padre
+    if (p == 0) // figlio
     {
-        printf("\nSONO IL PADRE  p=%d PID= %d PID padre = %d", p, getpid(), getppid());
+        printf("\n1_SONO IL FIGLIO p=%d PID = %d PID padre = %d\n", p, getpid(), getppid());
+        exit(25);
     }
-    else // figlio
+    else // padre
     {
-        printf("\nSONO IL FIGLIO p=%d PID = %d PID padre = %d\n", p, getpid(), getppid());
+        
+        printf("\n 2_SONO IL PADRE  p=%d PID= %d PID padre = %d\n", p, getpid(), getppid());
+        printf("3_Attendo mio figlio %d %d \n",WEXITSTATUS(status), wait(&status));
     }
 
     return 0;
