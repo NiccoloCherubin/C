@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-int pFuori;     // permette di gestire padre e figlio.
+int p;     // permette di gestire padre e figlio.
 int main() // nasce processo padre
 {
     // FORK
