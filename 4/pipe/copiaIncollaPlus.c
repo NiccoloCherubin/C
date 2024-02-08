@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
         {
             int cont = 0;
             // figlio 2 conta i caratteri nel file
-            if(destinazione = fopen("destinazione.txt", "r"))
+            destinazione = fopen("destinazione.txt", "r");
             
             while (n = read(fd[0], buffer, BUFFER_SIZE) > 0)
             {
