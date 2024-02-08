@@ -42,7 +42,7 @@ int main()
         }
 
         fclose(destinazione);
-        close(fd[0]); // Chiude l'estremità di lettura della pipe nel processo figlio
+        close(fd[0]); // chiuso pipe
     }
     else
     {                 // Processo padre
@@ -59,7 +59,7 @@ int main()
         }
 
         fclose(origine);
-        close(fd[1]); // Chiude l'estremità di scrittura della pipe nel processo padre
+        close(fd[1]); // chiuso pipe
     }
 
     return 0;
