@@ -90,7 +90,7 @@ int main(int argc, char *argv[])
                     }
                 }
             }
-            printf("Il carattere %s nel file è presente %d volte\n", argv[1], cont);
+            printf("Il carattere %c nel file è presente %d volte\n", argv[1][0], cont);
         }
     }
 
