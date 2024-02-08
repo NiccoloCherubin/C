@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
             caratteriSpeciali[contSpec] = stringa[i];
             contSpec++;
         }
-        else if ((stringa[i] <= 'z' && stringa[i] = > 'a') || (stringa[i] <= 'Z' && stringa[i] = > 'A'))
+        else if ((stringa[i] <= 'z' && stringa[i] >= 'a') || (stringa[i] <= 'Z' && stringa[i] <= 'A'))
         {
             ordineAlfabetico[contAlf] = stringa[i];
             contAlf++;
