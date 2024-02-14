@@ -11,14 +11,17 @@ int main(int argc, char *argv[])
         char autore[20];
         int prezzo;
     } Libro;
+
     int p;
-    int fd[2]; // file descriptor
-    p = fork();
+    int fd[2]; // file descriptor della pipe
     if (pipe(fd) < 0)
     {
         printf("Errore creazione pipe");
         exit(-1);
     }
+
+    p = fork();
+    
     if (p < 0)
     {
         printf("Errore creazione fork");
