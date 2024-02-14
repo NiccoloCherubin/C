@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     }
 
     p = fork();
-    
+
     if (p < 0)
     {
         printf("Errore creazione fork");
@@ -34,7 +34,6 @@ int main(int argc, char *argv[])
         // figlio
         Libro buffer;
         close(fd[1]); // chiuso scrittura
-        waitpid(getppid(), NULL,0);
         for (int i = 0; i < 2; i++)
         {
             read(fd[0], &buffer, sizeof(buffer)); // leggo la struct passata dal padre
