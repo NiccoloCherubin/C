@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <sys/wait.h> // Aggiunto per includere la dichiarazione di waitpid
+#include <sys/wait.h>
 
 int main(int argc, char *argv[])
 {
@@ -29,6 +29,7 @@ int main(int argc, char *argv[])
         close(fd[1]);
         exit(-1);
     }
+
     if (p == 0)
     {
         // figlio
@@ -47,7 +48,9 @@ int main(int argc, char *argv[])
     {
         // padre
         close(fd[0]); // chiuso lettura
+
         Libro libro;  // variabile struct
+        
         for (int i = 0; i < 2; i++)
         {
             printf("Inserire titolo del libro \n");
