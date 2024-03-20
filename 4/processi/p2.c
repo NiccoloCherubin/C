@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
     //controllo dati in input
     if (argc != 4)
     {
-        fprintf(stderr, "Utilizzo: %s <nome> <cognome> <età>\n", argv[0]);
+        printf("Argomenti errati");
         return EXIT_FAILURE;
     }
 
