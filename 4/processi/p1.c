@@ -30,7 +30,7 @@ int main()
 
     if (pid < 0)
     {
-        perror("fork");
+        printf("fork");
         exit(-1);
     }
 
@@ -45,7 +45,7 @@ int main()
     { 
         // Aspetta il termine del processo P2
         wait(NULL);
-        
+
         printf("Processo P2 completato\n");
     }
 
