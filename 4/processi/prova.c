@@ -12,7 +12,7 @@ int main() // nasce processo padre
     //  p nel figlio = 0
 
     // pc(program counter) segna indirizzo informazione successiva
-    pFuori = fork(); // padre genera figlio
+    int pFuori = fork(); // padre genera figlio
     if (pFuori != 0) // quello che fa padre
     {
         printf("\nSONO IL PADRE  p=%d PID= %d PID padre = %d", pFuori, getpid(), getppid());

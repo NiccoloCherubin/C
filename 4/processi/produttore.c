@@ -1,15 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <fcntl.h>
 #include <string.h>
 #include <unistd.h>
-#include <errno.h>
 #include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <errno.h>
 
 int spawn(char program[], char *argument[])
 {
     int p;
-    printf("Sono Spawn. Mio PID = %d", getpid());
+    printf("Sono il padre. Mio PID = %d", getpid());
     p = fork();
     if (p < 0)
     {
@@ -41,10 +42,10 @@ int main(int argc, char *argv[])
 
     printf("Sono il padre. Mio PID = %d", getpid());
 
-    arg[0] = (char *)malloc(strlen("./consumatore") + 1);
+    arg[0] = (char *)malloc(strlen("./consumatore") + 1); // spazio di memoria allocato per immagazzinare l'indirizzo di PROGRAM
     strcpy(arg[0], "./consumatore");
 
-    arg[1] = (char *)malloc(strlen(argv[2]) + 1);
+    arg[1] = (char *)malloc(strlen(argv[2]) + 1); 
     strcpy(arg[1], argv[2]);
 
     arg[2] = NULL;
