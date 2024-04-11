@@ -6,22 +6,11 @@
 // trhead POSIX (standard in tutti i sistemi UNIX).
 // Queste funzioni devono avere certa firma
 
-void *stampaGiorno(void *par) // primo thread
+void *stampaSaluti(void *par) // primo thread
 {
     printf("%s\n", (char*)par);
     return (void*)0;
 }
-void *stampaSera(void *par) // secondo thread
-{
-    printf("%s\n", (char*)par);
-    return (void*)0;
-}
-void *stampaNotte(void *par) // terzo thread
-{
-    printf("%s\n", (char*)par);
-    return (void*)0;
-}
-
 int main()
 {
     pthread_t threadGiorno;
@@ -32,9 +21,9 @@ int main()
     char* msg2 = "buonaSera";
     char* msg3 = "buonaNotte";
     // indirizzo, valori di default per spostare gestione thread, inidirizzo istruzioni con funzione, qualcosa da passare alle funzioni
-    pthread_create(&threadGiorno, NULL, &stampaGiorno, msg1);
-    pthread_create(&threadSera, NULL, &stampaSera, msg2);
-    pthread_create(&threadNotte, NULL, &stampaNotte, msg3);
+    pthread_create(&threadGiorno, NULL, &stampaSaluti, msg1);
+    pthread_create(&threadSera, NULL, &stampaSaluti, msg2);
+    pthread_create(&threadNotte, NULL, &stampaSaluti, msg3);
 
     printf("ciao \n");
 
