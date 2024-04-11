@@ -8,15 +8,18 @@
 
 void *stampaGiorno(void *par) // primo thread
 {
-    printf("buongiorno \n");
+    printf("%s\n", (char*)par);
+    return (void*)0;
 }
 void *stampaSera(void *par) // secondo thread
 {
-    printf("buonasera \n");
+    printf("%s\n", (char*)par);
+    return (void*)0;
 }
 void *stampaNotte(void *par) // terzo thread
 {
-    printf("buonanotte \n");
+    printf("%s\n", (char*)par);
+    return (void*)0;
 }
 
 int main()
@@ -25,10 +28,13 @@ int main()
     pthread_t threadSera;
     pthread_t threadNotte;
 
+    char* msg1 = "buongiorno";
+    char* msg2 = "buonaSera";
+    char* msg3 = "buonaNotte";
     // indirizzo, valori di default per spostare gestione thread, inidirizzo istruzioni con funzione, qualcosa da passare alle funzioni
-    pthread_create(&threadGiorno, NULL, &stampaGiorno, NULL);
-    pthread_create(&threadSera, NULL, &stampaSera, NULL);
-    pthread_create(&threadNotte, NULL, &stampaNotte, NULL);
+    pthread_create(&threadGiorno, NULL, &stampaGiorno, msg1);
+    pthread_create(&threadSera, NULL, &stampaSera, msg2);
+    pthread_create(&threadNotte, NULL, &stampaNotte, msg3);
 
     printf("ciao \n");
 
@@ -36,6 +42,6 @@ int main()
     pthread_join(threadGiorno,NULL);
     pthread_join(threadSera,NULL);
     pthread_join(threadNotte,NULL);
-    
+
     return 0;
 }
