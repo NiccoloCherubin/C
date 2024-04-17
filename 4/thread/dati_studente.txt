@@ -1,0 +1,4 @@
+nome:luca
+cognome:buttini
+classe:4E
+media:5.36
