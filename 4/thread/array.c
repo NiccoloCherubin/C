@@ -2,50 +2,51 @@
 #include <stdlib.h>
 #include <string.h>
 #include <pthread.h>
+#define NUM 100
 
 int numeroDaCercare = 8;
+int numeri[NUM];
 
-void *ricercaPrimaMeta(void *par)
+void FillArray()
 {
-    int *numero = (int *)par;
-    for (int i = 0; i < 5; i++)
+    for(int i = 0; i < NUM; i++)
     {
-        if (numero[i] == numeroDaCercare)
-        {
-            printf("Il numero %d è presente in %d\n", numeroDaCercare, i);
-            exit(0);
-        }
+        numeri[i] = rand() % 11; //estremo massimo escluso
     }
-
-    pthread_exit(NULL);
 }
-void *ricercaSecondaMeta(void *par)
+void *ricerca(void *par)
 {
-    int *numero = (int *)par;
-    for (int i = 5; i < 10; i++)
+    int numero = *((int *)par);
+    int rangeRicerca = numero + NUM / 2;
+
+    for (int i = numero; i < rangeRicerca; i++)
     {
-        if (numero[i] == numeroDaCercare)
+        if (numeri[i] == numeroDaCercare)
         {
             printf("Il numero %d è presente in %d\n", numeroDaCercare, i);
             exit(0);
         }
     }
 
-    pthread_exit(NULL);
     pthread_exit(NULL);
 }
 int main()
 {
-    int numeri[] = {8, 2, 3, 4, 5, 6, 7, 5, 8, 10, 11};
 
-    pthread_t RicercaPrimaMeta;
-    pthread_t RicercaSecondaMeta;
+    pthread_t Ricerca1;
+    pthread_t Ricerca2;
+    pthread_t Ricerca3;
+    pthread_t Ricerca4;
 
-    pthread_create(&RicercaPrimaMeta, NULL, ricercaPrimaMeta, numeri);
-    pthread_create(&RicercaSecondaMeta, NULL, ricercaSecondaMeta, numeri);
+    FillArray();
 
-    pthread_join(RicercaPrimaMeta,NULL);
-    pthread_join(RicercaSecondaMeta,NULL);
+    pthread_create(&Ricerca1, NULL, &ricerca, 0);
+
+    int supp = NUM/2; // variabile di supporto
+
+    pthread_create(&Ricerca2, NULL, &ricerca, &supp);
+
+    pthread_join(Ricerca1, NULL);
 
     return 0;
 }
