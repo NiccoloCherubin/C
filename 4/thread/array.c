@@ -9,6 +9,8 @@ int numeri[NUM];
 
 void FillArray()
 {
+    srand(time(NULL)); //cambio seme del random
+
     for(int i = 0; i < NUM; i++)
     {
         numeri[i] = rand() % 11; //estremo massimo escluso
@@ -16,10 +18,10 @@ void FillArray()
 }
 void *ricerca(void *par)
 {
-    int numero = *((int *)par);
-    int rangeRicerca = numero + NUM / 2;
+    int *numero = (int *)par;
+    int rangeRicerca = *numero + NUM / 2;
 
-    for (int i = numero; i < rangeRicerca; i++)
+    for (int i = *numero; i < rangeRicerca; i++)
     {
         if (numeri[i] == numeroDaCercare)
         {
