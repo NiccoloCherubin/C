@@ -1,4 +1,0 @@
-nome:matteo
-cognome:cominato
-classe:4f
-media:3.00
