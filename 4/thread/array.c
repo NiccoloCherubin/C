@@ -3,9 +3,10 @@
 #include <string.h>
 #include <pthread.h>
 
-int numeroDaCercare = 8;
+#define CERCARE 8;
+int numeri[] = {8, 2, 3, 4, 5, 6, 7, 5, 8, 10, 11};
 
-void *ricercaPrimaMeta(void *par)
+void *RicercaNumero(void *par)
 {
     int *numero = (int *)par;
     for (int i = 0; i < 5; i++)
@@ -19,33 +20,17 @@ void *ricercaPrimaMeta(void *par)
 
     pthread_exit(NULL);
 }
-void *ricercaSecondaMeta(void *par)
-{
-    int *numero = (int *)par;
-    for (int i = 5; i < 10; i++)
-    {
-        if (numero[i] == numeroDaCercare)
-        {
-            printf("Il numero %d è presente in %d\n", numeroDaCercare, i);
-            exit(0);
-        }
-    }
-
-    pthread_exit(NULL);
-    pthread_exit(NULL);
-}
 int main()
 {
-    int numeri[] = {8, 2, 3, 4, 5, 6, 7, 5, 8, 10, 11};
 
     pthread_t RicercaPrimaMeta;
     pthread_t RicercaSecondaMeta;
 
-    pthread_create(&RicercaPrimaMeta, NULL, ricercaPrimaMeta, numeri);
-    pthread_create(&RicercaSecondaMeta, NULL, ricercaSecondaMeta, numeri);
+    pthread_create(&RicercaPrimaMeta, NULL, ricercaNumero, (void *)numeri);
+    pthread_create(&RicercaSecondaMeta, NULL, ricercaNumero, (void *)numeri);
 
-    pthread_join(RicercaPrimaMeta,NULL);
-    pthread_join(RicercaSecondaMeta,NULL);
+    pthread_join(RicercaPrimaMeta, NULL);
+    pthread_join(RicercaSecondaMeta, NULL);
 
     return 0;
 }
