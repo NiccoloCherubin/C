@@ -12,11 +12,11 @@ typedef struct
 } Studente;
 void *stampaDatiInseriti(void *par)
 {
-    Studente *s = (Studente *)par;
-    printf("nome:%s\n", s->nome);
-    printf("cognome:%s\n", s->cognome);
-    printf("classe:%s\n", s->classe);
-    printf("media:%.2f\n", s->media);
+    Studente s = *((Studente *)par);
+    printf("nome:%s\n", s.nome);
+    printf("cognome:%s\n", s.cognome);
+    printf("classe:%s\n", s.classe);
+    printf("media:%.2f\n", s.media);
 
     pthread_exit(NULL);
 }
