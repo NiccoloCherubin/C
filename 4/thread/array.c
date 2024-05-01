@@ -2,53 +2,67 @@
 #include <stdlib.h>
 #include <string.h>
 #include <pthread.h>
-#define NUM 100
+#include <time.h>
 
-int numeroDaCercare = 8;
+#define NUM 1000
+#define NUM_THREADS 4
+#define NUMERO_RICERCA 8
+
 int numeri[NUM];
 
+typedef struct
+{
+    int inizio;
+    int fine;
+} Intervallo;
+
+// metodo per riempire l'array conn numeri casuali
 void FillArray()
 {
-    srand(time(NULL)); //cambio seme del random
+    srand(time(NULL)); // Cambio seme del random
 
-    for(int i = 0; i < NUM; i++)
+    for (int i = 0; i < NUM; i++)
     {
-        numeri[i] = rand() % 11; //estremo massimo escluso
+        numeri[i] = rand() % 11; // Estremo massimo escluso
     }
 }
+
 void *ricerca(void *par)
 {
-    int *numero = (int *)par;
-    int rangeRicerca = *numero + NUM / 2;
+    Intervallo *intervallo = (Intervallo *)par;
 
-    for (int i = *numero; i < rangeRicerca; i++)
+    for (int i = intervallo->inizio; i < intervallo->fine; i++)
     {
-        if (numeri[i] == numeroDaCercare)
+        if (numeri[i] == NUMERO_RICERCA)
         {
-            printf("Il numero %d è presente in %d\n", numeroDaCercare, i);
-            exit(0);
+            printf("Il numero %d è presente in %d\n", NUMERO_RICERCA, i);
+            pthread_exit(NULL); // Termina il thread corrente
         }
     }
-
     pthread_exit(NULL);
 }
+
 int main()
 {
+    pthread_t threads[NUM_THREADS];                   // array di thread
+    int DivisioniArrayPerRicerca = NUM / NUM_THREADS; // calcolo parti di divisione dell'array
+    Intervallo intervallo[NUM_THREADS];
 
-    pthread_t Ricerca1;
-    pthread_t Ricerca2;
-    pthread_t Ricerca3;
-    pthread_t Ricerca4;
+    FillArray(); // riempio l'array
 
-    FillArray();
+    // creazione ed esecuzione dei thread
+    for (int i = 0; i < NUM_THREADS; i++)
+    {
+        intervallo[i].inizio = i * DivisioniArrayPerRicerca;     // calcolo dove cominciare la ricerca
+        intervallo[i].fine = (i + 1) * DivisioniArrayPerRicerca; // calcolo dove finire la ricerca
+        pthread_create(&threads[i], NULL, ricerca, (void *)&intervallo[i]);
+    }
 
-    pthread_create(&Ricerca1, NULL, &ricerca, 0);
-
-    int supp = NUM/2; // variabile di supporto
-
-    pthread_create(&Ricerca2, NULL, &ricerca, &supp);
-
-    pthread_join(Ricerca1, NULL);
+    // aspetto la fine dell'esecuzione di tutti i thread
+    for (int i = 0; i < NUM_THREADS; i++)
+    {
+        pthread_join(threads[i], NULL);
+    }
 
     return 0;
 }
