@@ -3,7 +3,7 @@
 #include <pthread.h>
 #include <string.h>
 
-#define BUFFER_SIZE 1024
+#define BUFFER_SIZE 1
 
 pthread_t T_scrittura;
 
@@ -38,10 +38,13 @@ void *lettura(void *arg)
         exit(-1);
     }
 
+    int cont = 0;
     while ((n = fread(buffer, 1, BUFFER_SIZE, src_file)) > 0)
     {
+        printf("thread %d \n", cont);
+        cont++;
         pthread_create(&T_scrittura, NULL, scrittura, fileDestinazione);
-        pthread_join(T_scrittura, NULL); // Aspetta che il thread di scrittura finisca
+        //pthread_join(T_scrittura, NULL); // Aspetta che il thread di scrittura finisca
     }
 
     fclose(src_file);
