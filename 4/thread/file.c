@@ -12,7 +12,7 @@ char buffer[BUFFER_SIZE];
 
 void *scrittura(void *fileDestinazione)
 {
-    FILE *dest_file = fopen((char *)fileDestinazione, "w");
+    FILE *dest_file = fopen((char *)fileDestinazione, "wb");
     if (dest_file == NULL)
     {
         perror("Errore nell'apertura del file di destinazione");
@@ -39,7 +39,7 @@ void *lettura(void *arg)
 {
     char *nomeFile = (char *)arg;
     printf("%s \n", nomeFile);
-    FILE *src_file = fopen(nomeFile, "r");
+    FILE *src_file = fopen(nomeFile, "rb");
     if (src_file == NULL)
     {
         perror("Errore nell'apertura del file di origine");
