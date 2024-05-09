@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
+#include <string.h>
 #include <semaphore.h>
 
 #define BUFFER_SIZE 1024
@@ -38,7 +39,7 @@ void *lettura(void *arg)
 {
     char *nomeFile = (char *)arg;
     printf("%s \n", nomeFile);
-    FILE *src_file = fopen((char *)arg, "r");
+    FILE *src_file = fopen(nomeFile, "r");
     if (src_file == NULL)
     {
         perror("Errore nell'apertura del file di origine");
@@ -68,13 +69,17 @@ int main(int argc, char *argv[])
     }
 
     pthread_t T_lettura, T_scrittura;
+    char nFileOrigine[25], nFileDestinazione[25];
+
+    strcpy(nFileOrigine,argv[1]);
+    strcpy(nFileDestinazione,argv[2]);
 
     // inizializzazione dei semafori
     sem_init(&S_lettura, 0, 0);
     sem_init(&S_scrittura, 0, 0);
 
-    pthread_create(&T_lettura, NULL, lettura, (void *)&argv[1]);
-    pthread_create(&T_scrittura, NULL, lettura, (void *)&argv[2]);
+    pthread_create(&T_lettura, NULL, lettura, (void *)nFileOrigine);
+    pthread_create(&T_scrittura, NULL, lettura, (void *)nFileDestinazione);
 
     pthread_join(T_lettura, NULL);   // Aspetta che il thread di lettura finisca
     pthread_join(T_scrittura, NULL); // Aspetta che il thread di scrittura finisca
