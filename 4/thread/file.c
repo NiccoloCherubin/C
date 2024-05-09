@@ -39,6 +39,7 @@ void *lettura(void *arg)
 {
     char *nomeFile = (char *)arg;
     printf("%s \n", nomeFile);
+
     FILE *src_file = fopen(nomeFile, "rb");
     if (src_file == NULL)
     {
@@ -48,7 +49,7 @@ void *lettura(void *arg)
 
     while (n > 0)
     {
-        sem_wait(&S_lettura);
+        sem_wait(&S_scrittura);
         n = fread(buffer, 1, BUFFER_SIZE, src_file);
     }
 
