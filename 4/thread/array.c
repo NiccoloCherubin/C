@@ -55,7 +55,7 @@ int main()
     {
         intervallo[i].inizio = i * DivisioniArrayPerRicerca;     // calcolo dove cominciare la ricerca
         intervallo[i].fine = (i + 1) * DivisioniArrayPerRicerca; // calcolo dove finire la ricerca
-        pthread_create(&threads[i], NULL, ricerca, (void *)&intervallo[i]);
+        pthread_create(&threads[i], NULL, &ricerca, (void *)&intervallo[i]);
     }
 
     // aspetto la fine dell'esecuzione di tutti i thread
