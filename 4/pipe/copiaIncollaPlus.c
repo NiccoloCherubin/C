@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
             // figlio 2 conta i caratteri nel file
             destinazione = fopen("destinazione.txt", "r");
             
-            while (n = read(fd[0], buffer, BUFFER_SIZE) > 0)
+            while ((n = read(fd[0], buffer, BUFFER_SIZE) )> 0)
             {
                 for (int i = 0; i < BUFFER_SIZE; i++)
                 {

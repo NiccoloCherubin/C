@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <pthread.h>
-#include <time.h>
 
 #define NUM 1000
 #define NUM_THREADS 4
