@@ -33,21 +33,21 @@ int menu(int scelta) {
 }
 
 // stampa a video gli array
-void printArray(int *vett,int lunghezza) {
+void printArray(int *vett, int lunghezza) {
   for (int i = 0; i < lunghezza; i++) {
     printf("%d ", vett[i]);
   }
 }
 
 // inverte l'ordine degli elementi dell'array
-void swapArray(int *originale,int lunghezza) {
-  for (int i = lunghezza -1; i >= 0; i--) {
+void swapArray(int *originale, int lunghezza) {
+  for (int i = lunghezza - 1; i >= 0; i--) {
     printf("%d ", originale[LENGHT - i - 1]);
   }
 }
 
 // calcola la somma di tutti gli elementi nell'array
-int somma(int *vett,int lunghezza) {
+int somma(int *vett, int lunghezza) {
   int somma = 0;
   for (int i = 0; i < lunghezza; i++) {
     somma += vett[i];
@@ -65,7 +65,7 @@ void evenOrOdd(int *vett, short choice, int lunghezza) {
 }
 
 // ricerca elemento nell'array e ne torna la posizione
-int ricerca(int *vett, int ricercato,int lunghezza) {
+int ricerca(int *vett, int ricercato, int lunghezza) {
   for (int i = 0; i < lunghezza; i++) {
     if (vett[i] == ricercato) {
       return i;
@@ -75,13 +75,22 @@ int ricerca(int *vett, int ricercato,int lunghezza) {
 }
 
 // elima elemento dall'array
-void elimina(int *vett, int posizione,int lunghezza) {
+void elimina(int *vett, int posizione, int lunghezza) {
   int cont = 0; // contatore usiliario
 
   // elimino l'elemento
   for (int i = posizione; i < lunghezza - 1; i++) {
-        vett[i] = vett[i + 1];  // Sposto gli elementi a sinistra
-    }
+    vett[i] = vett[i + 1]; // Sposto gli elementi a sinistra
+  }
+}
+
+// scambia gli elementi a coppie
+void alternare(int *vett, int lunghezza) {
+  for (int i = 0; i < lunghezza - 1; i += 2) {
+    int temp = vett[i];
+    vett[i] = vett[i + 1];
+    vett[i + 1] = temp;
+  }
 }
 
 int main(int argc, char *argv[]) {
@@ -101,31 +110,31 @@ int main(int argc, char *argv[]) {
     case 1:
       // stampa contenuto array
       printf("Contenuto array: \n");
-      printArray(vett,lunghezzaAttuale);
+      printArray(vett, lunghezzaAttuale);
       break;
     case 2:
       // array invertito
-      swapArray(vett,lunghezzaAttuale);
+      swapArray(vett, lunghezzaAttuale);
       break;
     case 3:
       // somma e media
-      printf("Somma: %d, media:%2.f \n", somma(vett,lunghezzaAttuale),
-             (float)somma(vett,lunghezzaAttuale) / lunghezzaAttuale);
+      printf("Somma: %d, media:%2.f \n", somma(vett, lunghezzaAttuale),
+             (float)somma(vett, lunghezzaAttuale) / lunghezzaAttuale);
       break;
     case 4:
       // visualizza numeri pari
-      evenOrOdd(vett, 0,lunghezzaAttuale);
+      evenOrOdd(vett, 0, lunghezzaAttuale);
       break;
     case 5:
       // visualizza numeri dispari
-      evenOrOdd(vett, 1,lunghezzaAttuale);
+      evenOrOdd(vett, 1, lunghezzaAttuale);
       break;
     case 6:
       // ricerca numero in input
       printf("Digitare numero da ricercare:");
       scanf("%d", &input);
 
-      posizione = ricerca(vett, input,lunghezzaAttuale);
+      posizione = ricerca(vett, input, lunghezzaAttuale);
 
       if (posizione != -1) {
         // numero trovato
@@ -141,23 +150,33 @@ int main(int argc, char *argv[]) {
       scanf("%d", &input);
 
       // verifico la presenza dell'elemento all'interno dell'array
-      posizione = ricerca(vett, input,lunghezzaAttuale);
+      posizione = ricerca(vett, input, lunghezzaAttuale);
 
       if (posizione != -1) {
         // elimino l'elemento
-        elimina(vett, posizione,lunghezzaAttuale);
+        elimina(vett, posizione, lunghezzaAttuale);
 
-        lunghezzaAttuale--; //aggiorno la lunghezza del vettore
+        lunghezzaAttuale--; // aggiorno la lunghezza del vettore
 
-        //ristampo il vettore
+        // ristampo il vettore
         printf("Vettore dopo eliminazione: \n");
-        printArray(vett,lunghezzaAttuale);
+        printArray(vett, lunghezzaAttuale);
 
       } else {
         printf("Numero non presente nell'array");
       }
       break;
     case 8:
+      // alterna cifre
+
+      printf("Vettore prima dell'alterazione: \n");
+      printArray(vett, lunghezzaAttuale);
+
+      alternare(vett, lunghezzaAttuale);
+
+      // stampa vettore con cifre alternate due a due
+      printf("\nVettore dopo dell'alterazione: \n");
+      printArray(vett, lunghezzaAttuale);
       break;
     case 9:
       break;
