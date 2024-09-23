@@ -228,7 +228,7 @@ int main(int argc, char *argv[]) {
 
         printf("Digitare ordinamneto preferito:");
         scanf("%d",&scelta);
-      } while (scelta != 0 || scelta != -1);
+      } while (scelta != 0 && scelta != -1);
 
       if (scelta == 0) {
         // bogosort
