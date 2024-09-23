@@ -5,7 +5,6 @@
 
 #define LENGHT 10 // lunghezza array
 
-
 // funzione che riempie l'array con numeri casuali
 void fillArray(int *vett) {
 
@@ -14,7 +13,6 @@ void fillArray(int *vett) {
     vett[i] = rand() % 101; // da 0 a 100
   }
 }
-
 
 // funzione che stampa il menù e ritorna la scelta effettuata dall'utente
 int menu(int scelta) {
@@ -34,46 +32,56 @@ int menu(int scelta) {
   return scelta;
 }
 
-void printArray(int *vett) {
-  for (int i = 0; i < LENGHT; i++) {
+// stampa a video gli array
+void printArray(int *vett,int lunghezza) {
+  for (int i = 0; i < lunghezza; i++) {
     printf("%d ", vett[i]);
   }
 }
-void swapArray(int *originale) {  
-  for (int i = LENGHT; i >= 0; i--) {
-    printf("%d ",originale[LENGHT-i-1]);
+
+// inverte l'ordine degli elementi dell'array
+void swapArray(int *originale,int lunghezza) {
+  for (int i = lunghezza -1; i >= 0; i--) {
+    printf("%d ", originale[LENGHT - i - 1]);
   }
 }
 
-int somma(int *vett)
-{
+// calcola la somma di tutti gli elementi nell'array
+int somma(int *vett,int lunghezza) {
   int somma = 0;
-  for (int i = 0; i < LENGHT; i++) {
+  for (int i = 0; i < lunghezza; i++) {
     somma += vett[i];
-    }
-    return somma;
+  }
+  return somma;
 }
 
-void evenOrOdd(int* vett,short choice)
-{
-  for (int i = 0; i < LENGHT; i++) {
-    if(vett[i]%2 == choice)
-    {
+// verifica se numero è pari o dispari e lo stampa a video
+void evenOrOdd(int *vett, short choice, int lunghezza) {
+  for (int i = 0; i < lunghezza; i++) {
+    if (vett[i] % 2 == choice) {
       printf("%d ", vett[i]);
     }
   }
 }
 
-int ricerca(int *vett, int ricercato)
-{
-  for(int i= 0; i < LENGHT; i++)
-  {
-    if(vett[i] == ricercato)
-    {
+// ricerca elemento nell'array e ne torna la posizione
+int ricerca(int *vett, int ricercato,int lunghezza) {
+  for (int i = 0; i < lunghezza; i++) {
+    if (vett[i] == ricercato) {
       return i;
     }
   }
   return -1;
+}
+
+// elima elemento dall'array
+void elimina(int *vett, int posizione,int lunghezza) {
+  int cont = 0; // contatore usiliario
+
+  // elimino l'elemento
+  for (int i = posizione; i < lunghezza - 1; i++) {
+        vett[i] = vett[i + 1];  // Sposto gli elementi a sinistra
+    }
 }
 
 int main(int argc, char *argv[]) {
@@ -83,6 +91,8 @@ int main(int argc, char *argv[]) {
 
   int scelta;
   int input;
+  int posizione;
+  int lunghezzaAttuale = LENGHT;
   fillArray(vett);
 
   do {
@@ -91,42 +101,61 @@ int main(int argc, char *argv[]) {
     case 1:
       // stampa contenuto array
       printf("Contenuto array: \n");
-      printArray(vett);
+      printArray(vett,lunghezzaAttuale);
       break;
     case 2:
       // array invertito
-      swapArray(vett);
+      swapArray(vett,lunghezzaAttuale);
       break;
     case 3:
-      //somma e media
-      printf("Somma: %d, media:%2.f \n",somma(vett), (float)somma(vett)/LENGHT);
+      // somma e media
+      printf("Somma: %d, media:%2.f \n", somma(vett,lunghezzaAttuale),
+             (float)somma(vett,lunghezzaAttuale) / lunghezzaAttuale);
       break;
     case 4:
-      //visualizza numeri pari
-      evenOrOdd(vett, 0);
+      // visualizza numeri pari
+      evenOrOdd(vett, 0,lunghezzaAttuale);
       break;
     case 5:
-      //visualizza numeri dispari
-      evenOrOdd(vett, 1);
+      // visualizza numeri dispari
+      evenOrOdd(vett, 1,lunghezzaAttuale);
       break;
     case 6:
-      //ricerca numero in input
+      // ricerca numero in input
       printf("Digitare numero da ricercare:");
       scanf("%d", &input);
 
-      int posizione;
-      posizione = ricerca(vett, input);
+      posizione = ricerca(vett, input,lunghezzaAttuale);
 
-      if( posizione  != -1)
-      {
-        //numero trovato
-        printf("Numero %d trovato alla posizone %d dell'array", input, posizione);
-      }
-      else{
+      if (posizione != -1) {
+        // numero trovato
+        printf("Numero %d trovato alla posizone %d dell'array", input,
+               posizione);
+      } else {
         printf("Numero non presente all'interno dell'array");
       }
       break;
     case 7:
+      // eliminazione di un elemento
+      printf("Digitare numero da eliminare:");
+      scanf("%d", &input);
+
+      // verifico la presenza dell'elemento all'interno dell'array
+      posizione = ricerca(vett, input,lunghezzaAttuale);
+
+      if (posizione != -1) {
+        // elimino l'elemento
+        elimina(vett, posizione,lunghezzaAttuale);
+
+        lunghezzaAttuale--; //aggiorno la lunghezza del vettore
+
+        //ristampo il vettore
+        printf("Vettore dopo eliminazione: \n");
+        printArray(vett,lunghezzaAttuale);
+
+      } else {
+        printf("Numero non presente nell'array");
+      }
       break;
     case 8:
       break;
