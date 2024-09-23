@@ -93,6 +93,48 @@ void alternare(int *vett, int lunghezza) {
   }
 }
 
+// ordinamento vettore
+void bubblesort(int *vett, int lunghezza) {
+  for (int i = 0; i < lunghezza - 1; i++) {
+    for (int j = 0; j < lunghezza - i - 1; j++) {
+      if (vett[j] > vett[j + 1]) {
+        // Scambia gli elementi
+        int temp = vett[j];
+        vett[j] = vett[j + 1];
+        vett[j + 1] = temp;
+      }
+    }
+  }
+}
+
+// Funzione per controllare se l'array è ordinato
+int isSorted(int *vett, int lunghezza) {
+    for (int i = 0; i < lunghezza - 1; i++) {
+        if (vett[i] > vett[i + 1]) {
+            return 0; // Non ordinato
+        }
+    }
+    return 1; // Ordinato
+}
+
+// Funzione per mescolare l'array
+void shuffle(int *vett, int lunghezza) {
+    for (int i = 0; i < lunghezza; i++) {
+        int randomIndex = rand() % lunghezza;
+        // Scambia gli elementi
+        int temp = vett[i];
+        vett[i] = vett[randomIndex];
+        vett[randomIndex] = temp;
+    }
+}
+
+// Funzione Bogosort
+void bogosort(int *vett, int lunghezza) {
+    while (!isSorted(vett, lunghezza)) {
+        shuffle(vett, lunghezza);
+    }
+}
+
 int main(int argc, char *argv[]) {
 
   // popolo l'array
@@ -179,6 +221,23 @@ int main(int argc, char *argv[]) {
       printArray(vett, lunghezzaAttuale);
       break;
     case 9:
+      // ordinamento di vettore con bubble sort o bogosort
+      do {
+        printf("[0] bogosort");
+        printf("[1] bubble sort");
+
+      } while (scelta != 0 || scelta != -1);
+
+      if (scelta == 0) {
+        // bogosort
+        bogosort(vett, lunghezzaAttuale);
+      } else {
+        // bubble sort
+        bubblesort(vett, lunghezzaAttuale);
+      }
+
+      printf("Vettore ordinato: \n");
+      printArray(vett, lunghezzaAttuale);
       break;
     }
     printf("\n===================\n");
