@@ -82,7 +82,7 @@ int main(int argc, char *argv[]) {
       break;
     case 3:
       //somma e media
-      printf("Somma: %d, media: \n",somma(vett), somma(vett)/LENGHT);
+      printf("Somma: %d, media:%2.f \n",somma(vett), (float)somma(vett)/LENGHT);
       break;
     case 4:
       break;
