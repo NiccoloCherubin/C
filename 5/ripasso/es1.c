@@ -223,9 +223,11 @@ int main(int argc, char *argv[]) {
     case 9:
       // ordinamento di vettore con bubble sort o bogosort
       do {
-        printf("[0] bogosort");
-        printf("[1] bubble sort");
+        printf("[0] bogosort \n");
+        printf("[1] bubble sort \n");
 
+        printf("Digitare ordinamneto preferito:");
+        scanf("%d",&scelta);
       } while (scelta != 0 || scelta != -1);
 
       if (scelta == 0) {
