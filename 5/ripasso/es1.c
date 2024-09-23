@@ -2,21 +2,28 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define LENGHT 50 // lunghezza array
+#define LENGHT 10 // lunghezza array
 
-int vett[LENGHT]; // creazione del vettore
 
 // funzione che riempie l'array con numeri casuali
-
-void FillArray() {
+void fillArray(int *vett) {
 
   srand(time(NULL));
-  for (int i = 0; i < LENGHT; i++) 
-  {
-    vett[i] =  rand() % 101; // da 0 a 100
+  for (int i = 0; i < LENGHT; i++) {
+    vett[i] = rand() % 101; // da 0 a 100
   }
 }
-
+void printArray(int *vett) {
+  for (int i = 0; i < LENGHT; i++) {
+    printf("%d ", vett[i]);
+  }
+}
+int *swapArray(int *originale, int *copia) {  
+  for (int i = LENGHT; i >= 0; i--) {
+    copia[LENGHT-i-1] = originale[i];
+  }
+  return copia;
+}
 // funzione che stampa il menù e ritorna la scelta effettuata dall'utente
 
 int menu(int scelta) {
@@ -36,26 +43,31 @@ int menu(int scelta) {
   return scelta;
 }
 
-void PrintArray()
-{
-    for(int i = 0; i < LENGHT; i++)
-    {
-        printf("Elemento %d: %d",i,vett[i]);
-    }
-}
-
 int main(int argc, char *argv[]) {
 
-  FillArray();
+  // popolo l'array
+  int vett[LENGHT]; // creazione del vettore
+
+  int temp[LENGHT]; // creazione array temporaneo per lo swap
 
   int scelta;
+  int swap = 0; // per capire se lo swap è stato fatto o meno
+  int *arrayInvertito; // puntatore ad intero per l'array invertito
+
+  fillArray(vett);
+
   do {
     scelta = menu(0);
-    printf("\n  scelta: %d", scelta);
     switch (scelta) {
     case 1:
+      // stampa contenuto array
+      printf("Contenuto array: \n");
+      printArray(vett);
       break;
     case 2:
+      // array invertito
+      arrayInvertito = swapArray(vett,temp);
+      printArray(arrayInvertito);
       break;
     case 3:
       break;
@@ -72,7 +84,7 @@ int main(int argc, char *argv[]) {
     case 9:
       break;
     }
-
+    printf("\n===================\n");
   } while (scelta > 0);
 
   printf("Programma finito");
