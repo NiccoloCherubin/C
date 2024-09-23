@@ -38,11 +38,10 @@ void printArray(int *vett) {
     printf("%d ", vett[i]);
   }
 }
-int *swapArray(int *originale, int *copia) {  
+void swapArray(int *originale) {  
   for (int i = LENGHT; i >= 0; i--) {
-    copia[LENGHT-i-1] = originale[i];
+    printf("%d ",originale[LENGHT-i-1]);
   }
-  return copia;
 }
 
 int somma(int *vett)
@@ -54,17 +53,23 @@ int somma(int *vett)
     return somma;
 }
 
+void evenOrOdd(int* vett,short choice)
+{
+  for (int i = 0; i < LENGHT; i++) {
+    if(vett[i]%2 == choice)
+    {
+      printf("%d ", vett[i]);
+    }
+  }
+}
+
 int main(int argc, char *argv[]) {
 
   // popolo l'array
   int vett[LENGHT]; // creazione del vettore
 
-  int temp[LENGHT]; // creazione array temporaneo per lo swap
-
   int scelta;
   int swap = 0; // per capire se lo swap è stato fatto o meno
-  int *arrayInvertito; // puntatore ad intero per l'array invertito
-
   fillArray(vett);
 
   do {
@@ -77,16 +82,19 @@ int main(int argc, char *argv[]) {
       break;
     case 2:
       // array invertito
-      arrayInvertito = swapArray(vett,temp);
-      printArray(arrayInvertito);
+      swapArray(vett);
       break;
     case 3:
       //somma e media
       printf("Somma: %d, media:%2.f \n",somma(vett), (float)somma(vett)/LENGHT);
       break;
     case 4:
+      //visualizza numeri pari
+      evenOrOdd(vett, 0);
       break;
     case 5:
+      //visualizza numeri dispari
+      evenOrOdd(vett, 1);
       break;
     case 6:
       break;
@@ -100,5 +108,5 @@ int main(int argc, char *argv[]) {
     printf("\n===================\n");
   } while (scelta > 0);
 
-  printf("Programma finito");
+  printf("Programma finito \n");
 }
