@@ -13,19 +13,9 @@ void fillArray(int *vett) {
     vett[i] = rand() % 101; // da 0 a 100
   }
 }
-void printArray(int *vett) {
-  for (int i = 0; i < LENGHT; i++) {
-    printf("%d ", vett[i]);
-  }
-}
-int *swapArray(int *originale, int *copia) {  
-  for (int i = LENGHT; i >= 0; i--) {
-    copia[LENGHT-i-1] = originale[i];
-  }
-  return copia;
-}
-// funzione che stampa il menù e ritorna la scelta effettuata dall'utente
 
+
+// funzione che stampa il menù e ritorna la scelta effettuata dall'utente
 int menu(int scelta) {
   printf("\n[1] Visualizza elementi array \n");
   printf("[2] Visualizza elementi invertiti array \n");
@@ -41,6 +31,27 @@ int menu(int scelta) {
   scanf("%d", &scelta);
 
   return scelta;
+}
+
+void printArray(int *vett) {
+  for (int i = 0; i < LENGHT; i++) {
+    printf("%d ", vett[i]);
+  }
+}
+int *swapArray(int *originale, int *copia) {  
+  for (int i = LENGHT; i >= 0; i--) {
+    copia[LENGHT-i-1] = originale[i];
+  }
+  return copia;
+}
+
+int somma(int *vett)
+{
+  int somma = 0;
+  for (int i = 0; i < LENGHT; i++) {
+    somma += vett[i];
+    }
+    return somma;
 }
 
 int main(int argc, char *argv[]) {
@@ -70,6 +81,8 @@ int main(int argc, char *argv[]) {
       printArray(arrayInvertito);
       break;
     case 3:
+      //somma e media
+      printf("Somma: %d, media: \n",somma(vett), somma(vett)/LENGHT);
       break;
     case 4:
       break;
