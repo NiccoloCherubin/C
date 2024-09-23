@@ -1,3 +1,4 @@
+#include <endian.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -63,13 +64,25 @@ void evenOrOdd(int* vett,short choice)
   }
 }
 
+int ricerca(int *vett, int ricercato)
+{
+  for(int i= 0; i < LENGHT; i++)
+  {
+    if(vett[i] == ricercato)
+    {
+      return i;
+    }
+  }
+  return -1;
+}
+
 int main(int argc, char *argv[]) {
 
   // popolo l'array
   int vett[LENGHT]; // creazione del vettore
 
   int scelta;
-  int swap = 0; // per capire se lo swap è stato fatto o meno
+  int input;
   fillArray(vett);
 
   do {
@@ -97,6 +110,21 @@ int main(int argc, char *argv[]) {
       evenOrOdd(vett, 1);
       break;
     case 6:
+      //ricerca numero in input
+      printf("Digitare numero da ricercare:");
+      scanf("%d", &input);
+
+      int posizione;
+      posizione = ricerca(vett, input);
+
+      if( posizione  != -1)
+      {
+        //numero trovato
+        printf("Numero %d trovato alla posizone %d dell'array", input, posizione);
+      }
+      else{
+        printf("Numero non presente all'interno dell'array");
+      }
       break;
     case 7:
       break;
