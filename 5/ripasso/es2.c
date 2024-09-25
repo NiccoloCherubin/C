@@ -2,26 +2,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
+// Controlla se una stringa contiene solo lettere
 int justLetters(char stringa[])
 {
-    for(int i = 0; i < strlen(stringa) - 1; i++)
+    for (int i = 0; i < strlen(stringa); i++)
     {
-        //uso codice ascii
-        if((int)stringa[i] < 65 || (int)stringa[i] > 90 || (int)stringa[i] < 97 || (int)stringa[i] > 112 )
+        // Uso il codice ASCII per controllare se è una lettera maiuscola o minuscola
+        if (!((stringa[i] >= 'A' && stringa[i] <= 'Z') || (stringa[i] >= 'a' && stringa[i] <= 'z')))
         {
             return 0;
         }
     }
-    return 1; //true
+    return 1; // true
 }
 
-//controlla presenza di una lettera nella stringa
+// Controlla la presenza di una lettera nella stringa
 int verificaPresenza(char lettera, char stringa[])
 {
-    for(int i = 0; i < strlen(stringa) -1; i++)
+    for (int i = 0; i < strlen(stringa); i++)
     {
-        if(stringa[i] == lettera)
+        if (stringa[i] == lettera)
         {
             return 1;
         }
@@ -29,54 +29,63 @@ int verificaPresenza(char lettera, char stringa[])
     return 0;
 }
 
-/*
- char* evenString(char string[])
+// Restituisce una nuova stringa con i caratteri nelle posizioni pari
+char* evenString(char string[])
 {
-    char evenString[100];
+    int len = strlen(string);
+    char* evenStr = (char*)malloc((len / 2 + 1) * sizeof(char)); // Alloco spazio per la stringa
     int k = 0;
 
-    for(int i = 0; i < strlen(string); i+=2)
+    for (int i = 0; i < len; i += 2)
     {
-        evenString
+        evenStr[k++] = string[i];
     }
+    evenStr[k] = '\0'; // Termino la stringa con il carattere null
 
-    return evenString;
+    return evenStr;
 }
-*/
 
-int main (int argc, char **argv)
+int main(int argc, char** argv)
 {
     char string1[100];
     char lettera;
 
-
     printf("Inserire stringa \n");
-    scanf("%s", string1);
+    scanf("%s", string1); // Lettura della stringa
 
-    printf("stringa %s \n", string1);
+    printf("Stringa inserita: %s \n", string1);
 
-
-    //verifico ci siano solo lettere
-    if(!justLetters(string1))
+    // Verifico se la stringa contiene solo lettere
+    if (!justLetters(string1))
     {
-        printf("La stringa non contiene solo caratteri \n");        
+        printf("La stringa non contiene solo lettere \n");
     }
-    else{
-        printf("La stringa contiene solo caratteri \n");
+    else
+    {
+        printf("La stringa contiene solo lettere \n");
     }
-    
-    printf("Digitare lettere per verificarne la presenza \n");
+
+    // Consumo il newline rimasto nel buffer dopo la lettura della stringa
+    getchar();
+
+    // Verifico la presenza di una lettera nella stringa
+    printf("Digitare una lettera per verificarne la presenza: \n");
     scanf("%c", &lettera);
 
-
-    if(verificaPresenza(lettera, string1))
+    if (verificaPresenza(lettera, string1))
     {
-        printf("la lettera inserita è presente \n");
+        printf("La lettera inserita è presente \n");
     }
-    else{
+    else
+    {
+        printf("La lettera inserita non è presente \n");
+    }
 
-        printf("la lettera inserita non è presente \n");
-    }
+    // Chiamo la funzione evenString
+    char* evenStr = evenString(string1);
+    printf("Stringa con i caratteri in posizione pari: %s\n", evenStr);
+
+    free(evenStr); // Libero la memoria allocata
 
     return 0;
 }
