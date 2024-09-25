@@ -29,34 +29,45 @@ int verificaPresenza(char lettera, char stringa[])
     return 0;
 }
 
-// Restituisce una nuova stringa con i caratteri nelle posizioni pari
-char* evenString(char string[])
+int doubleLetters(char string[])
 {
-    int len = strlen(string);
-    char* evenStr = (char*)malloc((len / 2 + 1) * sizeof(char)); // Alloco spazio per la stringa
+    for(int i = 0; i < strlen(string) - 1; i++)
+    {
+        if(string[i] == string[i+1])
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+// Restituisce una nuova stringa con i caratteri nelle posizioni pari o dispari
+char* evenOrOddString(char string[], int choice)
+{
+    char* str = (char*)malloc((strlen(string) / 2 + 1) * sizeof(char)); // Alloco spazio per la stringa
     int k = 0;
 
-    for (int i = 0; i < len; i += 2)
+    for (int i = choice; i < strlen(str); i += 2)
     {
-        evenStr[k++] = string[i];
+        str[k++] = string[i];
     }
-    evenStr[k] = '\0'; // Termino la stringa con il carattere null
+    str[k] = '\0'; // Termino la stringa con il carattere terminatore
 
-    return evenStr;
+    return str;
 }
 
 int main(int argc, char** argv)
 {
-    char string1[100];
+    char string[100];
     char lettera;
 
     printf("Inserire stringa \n");
-    scanf("%s", string1); // Lettura della stringa
+    scanf("%s", string); // Lettura della stringa
 
-    printf("Stringa inserita: %s \n", string1);
+    printf("Stringa inserita: %s \n", string);
 
     // Verifico se la stringa contiene solo lettere
-    if (!justLetters(string1))
+    if (!justLetters(string))
     {
         printf("La stringa non contiene solo lettere \n");
     }
@@ -72,7 +83,7 @@ int main(int argc, char** argv)
     printf("Digitare una lettera per verificarne la presenza: \n");
     scanf("%c", &lettera);
 
-    if (verificaPresenza(lettera, string1))
+    if (verificaPresenza(lettera, string))
     {
         printf("La lettera inserita è presente \n");
     }
@@ -82,10 +93,21 @@ int main(int argc, char** argv)
     }
 
     // Chiamo la funzione evenString
-    char* evenStr = evenString(string1);
+    char* evenStr = evenOrOddString(string,0);
     printf("Stringa con i caratteri in posizione pari: %s\n", evenStr);
 
-    free(evenStr); // Libero la memoria allocata
+    char* oddStr = evenOrOddString(string,1); 
+    printf("Stringa con i caratteri in posizione dispari: %s\n", oddStr);
 
+    free(evenStr); // Libero la memoria allocata
+    free(oddStr); // Libero la memoria allocata
+
+    if(doubleLetters(string))
+    {
+        printf("La stringa contiene delle doppie \n");
+    }
+    else{
+        printf("La stringa non contiene delle doppie \n");
+    }
     return 0;
 }
