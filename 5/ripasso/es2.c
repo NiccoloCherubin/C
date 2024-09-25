@@ -58,16 +58,16 @@ char* evenOrOddString(char string[], int choice)
 
 int main(int argc, char** argv)
 {
-    char string[100];
+    char string1[100];
     char lettera;
 
     printf("Inserire stringa \n");
-    scanf("%s", string); // Lettura della stringa
+    scanf("%s", string1); // Lettura della stringa
 
-    printf("Stringa inserita: %s \n", string);
+    printf("Stringa inserita: %s \n", string1);
 
     // Verifico se la stringa contiene solo lettere
-    if (!justLetters(string))
+    if (!justLetters(string1))
     {
         printf("La stringa non contiene solo lettere \n");
     }
@@ -83,7 +83,7 @@ int main(int argc, char** argv)
     printf("Digitare una lettera per verificarne la presenza: \n");
     scanf("%c", &lettera);
 
-    if (verificaPresenza(lettera, string))
+    if (verificaPresenza(lettera, string1))
     {
         printf("La lettera inserita è presente \n");
     }
@@ -93,16 +93,16 @@ int main(int argc, char** argv)
     }
 
     // Chiamo la funzione evenString
-    char* evenStr = evenOrOddString(string,0);
+    char* evenStr = evenOrOddString(string1,0);
     printf("Stringa con i caratteri in posizione pari: %s\n", evenStr);
 
-    char* oddStr = evenOrOddString(string,1); 
+    char* oddStr = evenOrOddString(string1,1); 
     printf("Stringa con i caratteri in posizione dispari: %s\n", oddStr);
 
     free(evenStr); // Libero la memoria allocata
     free(oddStr); // Libero la memoria allocata
 
-    if(doubleLetters(string))
+    if(doubleLetters(string1))
     {
         printf("La stringa contiene delle doppie \n");
     }
