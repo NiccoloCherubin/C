@@ -137,11 +137,39 @@ Book newBook(Book book)
     return book;
 
 }
+
+int findBook(char *title, Category categoria)
+{
+    for(int i = 0; i < categoria.cont;i++)
+    {        
+        if(strcmp(categoria.books[i].title, title) == 0) //confronto i titoli dei libri
+        {
+            return i; //torno la posizione del libro
+        }
+        
+    }
+    return -1; //libro non trovato
+}
+
+// funzione che elima elemento dall'array
+void deleteBook(Category *categoria, int posizione) {
+
+  // elimino l'elemento
+  for (int i = posizione; i < categoria->cont - 1; i++) {
+    categoria->books[i] = categoria->books[i + 1]; // Sposto gli elementi a sinistra
+  }
+  categoria->cont--; //diminuisco il contatore
+}
 int main(int argc, char **argv) {
 
-    int choice;
+    int choice; //scelta che effettuerà l'utente nel programma
+
+    //variabili di supporto utili dopo
     int supp;
     Book temp;
+    char tempTitle[100];
+    int index;
+
 
 
     // Inizializzo le categorie che utilizzerò per suddividere i libri
@@ -155,7 +183,7 @@ int main(int argc, char **argv) {
     FILE *origin = fopen("libreria_libri.csv", "r"); // Apro il file in lettura
     if (origin == NULL) {
         perror("Errore nell'apertura del file");
-        exit(EXIT_FAILURE);
+        exit(-1);
     }
 
     // Importo i file all'interno dell'array
@@ -177,7 +205,7 @@ int main(int argc, char **argv) {
                 //crea un nuovo libro e lo aggiunge nella libreria
 
                 do {
-                    printf("Scegli la categoria nella quale aggiungere l'array \n");
+                    printf("Scegli la categoria nella quale aggiungere il libro \n");
                     for (int i = 0; i < N_CATEGORIES; i++) 
                     {
                         printf("[%d] %s \n", i, categories[i].categoryName);
@@ -192,13 +220,41 @@ int main(int argc, char **argv) {
             break;
 
             case 3:
+            
             break;
 
             case 4:
+            //ricerca di un libro nella libreria e lo elimina
+
+            do 
+            {
+                printf("Scegli la categoria nella quale rimuovere il libro \n");
+                for (int i = 0; i < N_CATEGORIES; i++) 
+                {
+                    printf("[%d] %s \n", i, categories[i].categoryName);
+                }
+                scanf("%d", &supp);
+                
+            }while (supp < 0 || supp > N_CATEGORIES); //controlla se ha fatto una scelta valida
+
+            printf("inserire titolo del libro da eliminare \n");
+            scanf("%s", tempTitle);
+
+            //ricerco il libro da eliminare
+            index = findBook(tempTitle, categories[supp]);
+
+            if(index != -1)
+            {
+                // elimino il libro dalla libreria
+                deleteBook(&categories[supp], index);
+                printf("Libro trovato ed eliminato con successo\n");
+            }
+            else{
+                printf("Libro non trovato \n");
+            }
             break;
         
         }
-        printf("%d", choice);
 
     }while (choice >= 1);
     
