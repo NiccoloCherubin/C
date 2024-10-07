@@ -160,6 +160,22 @@ void deleteBook(Category *categoria, int posizione) {
   }
   categoria->cont--; //diminuisco il contatore
 }
+int chooseCategory(Category *categories)
+{
+    int supp;
+    do 
+    {
+        printf("Scegli la categoria nella quale aggiungere il libro \n");
+            for (int i = 0; i < N_CATEGORIES; i++) 
+                {
+                    printf("[%d] %s \n", i, categories[i].categoryName);
+                }
+                scanf("%d", &supp);
+                
+    }while (supp < 0 || supp > N_CATEGORIES); //controlla se ha fatto una scelta valida
+
+    return supp;
+}
 int main(int argc, char **argv) {
 
     int choice; //scelta che effettuerà l'utente nel programma
@@ -202,43 +218,28 @@ int main(int argc, char **argv) {
                 printArr(categories);
             break;                
             case 2:
-                //crea un nuovo libro e lo aggiunge nella libreria
-
-                do {
-                    printf("Scegli la categoria nella quale aggiungere il libro \n");
-                    for (int i = 0; i < N_CATEGORIES; i++) 
-                    {
-                        printf("[%d] %s \n", i, categories[i].categoryName);
-                    }
-                    scanf("%d", &supp);
-                
-                }while (supp < 0 || supp > N_CATEGORIES); //controlla se ha fatto una scelta valida
-
+                //crea un nuovo libro e lo aggiunge nella libreria 
+                supp = chooseCategory(categories);                               
                 addBook(newBook(temp), &categories[supp]);
             
 
             break;
 
             case 3:
+            //trova e modifica elemento di un libro
             
             break;
 
             case 4:
             //ricerca di un libro nella libreria e lo elimina
 
-            do 
-            {
-                printf("Scegli la categoria nella quale rimuovere il libro \n");
-                for (int i = 0; i < N_CATEGORIES; i++) 
-                {
-                    printf("[%d] %s \n", i, categories[i].categoryName);
-                }
-                scanf("%d", &supp);
-                
-            }while (supp < 0 || supp > N_CATEGORIES); //controlla se ha fatto una scelta valida
+            
 
             printf("inserire titolo del libro da eliminare \n");
             scanf("%s", tempTitle);
+
+            //faccio scegliere all'utente la categoria dalla quale eliminare il libro
+            supp = chooseCategory(categories);                               
 
             //ricerco il libro da eliminare
             index = findBook(tempTitle, categories[supp]);
