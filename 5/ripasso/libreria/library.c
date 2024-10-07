@@ -6,7 +6,7 @@
 #define TITLE_LENGTH 50
 #define AUTHOR_LENGTH 50
 #define YEAR_LENGTH 5  // Contando il carattere terminatore
-#define PRICE_LENGTH 10 // Maggiore per considerare valori decimali
+#define PRICE_LENGTH 5 // Contando il carattere terminatore
 #define CATEGORY_LENGTH 50
 #define N_CATEGORIES 4
 
@@ -92,8 +92,55 @@ void importFromFile(FILE *origin, Category *categories) {
         addBook(book, categoria);
     }
 }
+// funzione che stampa il menù e ritorna la choice effettuata dall'utente
+int menu(int choice) {
+  printf("\n[1] Visualizza elementi array \n");  
+  printf("[2] Aggiungi un elemento all' array \n");  
+  printf("[3] Modifica un elementlo dell'array \n"); 
+  printf("[4] Elimina un elementlo dell'array \n"); 
 
+  printf("inserire opzione desiderata (scegliere -1 per uscire):");
+  scanf("%d", &choice);
+
+  return choice;
+}
+
+//funzione che stampa a video il contenuto di ogni categoria
+void printArr(Category *categories)
+{
+    for(int i = 0; i <N_CATEGORIES;i++)
+    {
+        printf("Libri presenti nella categoria %s, %d\n", categories[i].categoryName, categories[i].cont);
+
+        for(int k = 0; k < categories[i].cont; k++)
+        {
+            printf("Titolo: %s, Autore: %s\n", categories[i].books[k].title,categories[i].books[k].author);
+        }
+    }
+}
+
+//funzione che crea un nuovo libro
+Book newBook(Book book)
+{
+    printf("Inserire titolo del libro \n");
+    scanf("%s", book.title);
+
+    printf("Inserire autore del libro \n");
+    scanf("%s", book.author);
+
+    printf("Inserire anno di pubblicazione del libro \n");
+    scanf("%s", book.year);
+
+    printf("Inserire prezzo del libro \n");
+    scanf("%s", book.price);
+
+    return book;
+
+}
 int main(int argc, char **argv) {
+
+    int choice;
+
     // Inizializzo le categorie che utilizzerò per suddividere i libri
     Category categories[N_CATEGORIES] = {
         {"Letteratura Classica", NULL, 0},
@@ -114,7 +161,31 @@ int main(int argc, char **argv) {
     // Chiudo il file
     fclose(origin);
 
-    printf("Programma finito senza problemi, libri totali: %d\n", totBooks);
+    do {
+        choice = menu(choice);
+
+        switch (choice) {
+
+            case 1:
+                //stampa a video l'array
+                printArr(categories);
+            break;                
+            case2:
+                //crea un nuovo libro e lo aggiunge nella libreria
+            Book temp;            
+
+            break;
+
+            case 3:
+            break;
+
+            case 4:
+            break;
+        
+        }
+        printf("%d", choice);
+
+    }while (choice >= 1);
     
     // Libero la memoria allocata utilizzando la realloc
     for (int i = 0; i < N_CATEGORIES; i++) {
