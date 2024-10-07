@@ -172,7 +172,8 @@ int main(int argc, char **argv) {
             break;                
             case2:
                 //crea un nuovo libro e lo aggiunge nella libreria
-            Book temp;            
+            Book temp;
+            
 
             break;
 
