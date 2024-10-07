@@ -1,39 +1,39 @@
 title,author,year,price,category
-Il nome della rosa,Umberto Eco,1980,12.22,Narrativa Moderna
-Divina Commedia,Dante Alighieri,1320,23.01,Letteratura Classica
-I Promessi Sposi,Alessandro Manzoni,1827,22.19,Letteratura Classica
-La coscienza di Zeno,Italo Svevo,1923,5.99,Narrativa Moderna
-Il Gattopardo,Giuseppe Tomasi di Lampedusa,1958,26.69,Narrativa Moderna
-Se questo è un uomo,Primo Levi,1947,18.48,Narrativa Moderna
-Il deserto dei tartari,Dino Buzzati,1940,10.81,Narrativa Moderna
-La luna e i falò,Cesare Pavese,1950,13.44,Narrativa Moderna
-Siddharta,Hermann Hesse,1922,28.2,Filosofia
-Il piccolo principe,Antoine de Saint-Exupéry,1943,29.28,Narrativa Moderna
-La metamorfosi,Franz Kafka,1915,14.49,Narrativa Moderna
-Fahrenheit 451,Ray Bradbury,1953,24.18,Fantascienza
-1984,George Orwell,1949,9.57,Fantascienza
-Il grande Gatsby,F. Scott Fitzgerald,1925,28.96,Narrativa Moderna
-Moby Dick,Herman Melville,1851,14.36,Letteratura Classica
+Divina Commedia,Dante Alighieri,1320,23.01I Promessi Sposi,Letteratura Classica
+I Promessi Sposi,Alessandro Manzoni,1827,22.19Moby Dick,Letteratura Classica
+Moby Dick,Herman Melville,1851,14.36Orgoglio e pregiudizio,Letteratura Classica
 Orgoglio e pregiudizio,Jane Austen,1813,14.6,Letteratura Classica
-Il ritratto di Dorian Gray,Oscar Wilde,1890,13.75,Letteratura Classica
-Guerra e pace,Lev Tolstoj,1869,20.24,Letteratura Classica
-Anna Karenina,Lev Tolstoj,1877,13.05,Letteratura Classica
+Il ritratto di Dorian Gray,Oscar Wilde,1890,13.75Guerra e pace,Letteratura Classica
+Guerra e pace,Lev Tolstoj,1869,20.24Anna Karenina,Letteratura Classica
+Anna Karenina,Lev Tolstoj,1877,13.05Il conte di Montecristo,Letteratura Classica
 Il conte di Montecristo,Alexandre Dumas,1844,5.93,Letteratura Classica
-Don Chisciotte della Mancia,Miguel de Cervantes,1605,29.27,Letteratura Classica
-Le avventure di Sherlock Holmes,Arthur Conan Doyle,1892,27.61,Letteratura Classica
-Il processo,Franz Kafka,1925,24.12,Narrativa Moderna
-La nausea,Jean-Paul Sartre,1938,13.14,Filosofia
-La peste,Albert Camus,1947,27.82,Filosofia
-Il lupo della steppa,Hermann Hesse,1927,28.63,Filosofia
-Il maestro e Margherita,Michail Bulgakov,1966,23.23,Narrativa Moderna
-Lolita,Vladimir Nabokov,1955,15.25,Narrativa Moderna
-L'amore ai tempi del colera,Gabriel Garcia Marquez,1985,16.86,Narrativa Moderna
-Cent'anni di solitudine,Gabriel Garcia Marquez,1967,28.7,Narrativa Moderna
+Don Chisciotte della Mancia,Miguel de Cervantes,1605,29.27Le avventure di Sherlock Holmes,Letteratura Classica
+Le avventure di Sherlock Holmes,Arthur Conan Doyle,1892,27.61Cime tempestose,Letteratura Classica
 Cime tempestose,Emily Brontë,1847,6.88,Letteratura Classica
-Jane Eyre,Charlotte Brontë,1847,20.48,Letteratura Classica
+Jane Eyre,Charlotte Brontë,1847,20.48Il richiamo della foresta,Letteratura Classica
 Il richiamo della foresta,Jack London,1903,8.31,Letteratura Classica
-Viaggio al centro della Terra,Jules Verne,1864,25.68,Fantascienza
 Dracula,Bram Stoker,1897,26.9,Letteratura Classica
-Frankenstein,Mary Shelley,1818,10.81,Fantascienza
-Robinson Crusoe,Daniel Defoe,1719,23.98,Letteratura Classica
+Robinson Crusoe,Daniel Defoe,1719,23.98La tempesta,Letteratura Classica
 La tempesta,William Shakespeare,1611,24.56,Letteratura Classica
+Il nome della rosa,Umberto Eco,1980,12.22La coscienza di Zeno,Narrativa Moderna
+La coscienza di Zeno,Italo Svevo,1923,5.99,Narrativa Moderna
+Il Gattopardo,Giuseppe Tomasi di Lampedusa,1958,26.69Se questo è un uomo,Narrativa Moderna
+Se questo è un uomo,Primo Levi,1947,18.48Il deserto dei tartari,Narrativa Moderna
+Il deserto dei tartari,Dino Buzzati,1940,10.81La luna e i falò,Narrativa Moderna
+La luna e i falò,Cesare Pavese,1950,13.44Il piccolo principe,Narrativa Moderna
+Il piccolo principe,Antoine de Saint-Exupéry,1943,29.28La metamorfosi,Narrativa Moderna
+La metamorfosi,Franz Kafka,1915,14.49Il grande Gatsby,Narrativa Moderna
+Il grande Gatsby,F. Scott Fitzgerald,1925,28.96Il processo,Narrativa Moderna
+Il processo,Franz Kafka,1925,24.12Il maestro e Margherita,Narrativa Moderna
+Il maestro e Margherita,Michail Bulgakov,1966,23.23Lolita,Narrativa Moderna
+Lolita,Vladimir Nabokov,1955,15.25L'amore ai tempi del colera,Narrativa Moderna
+L'amore ai tempi del colera,Gabriel Garcia Marquez,1985,16.86Cent'anni di solitudine,Narrativa Moderna
+Cent'anni di solitudine,Gabriel Garcia Marquez,1967,28.7,Narrativa Moderna
+Siddharta,Hermann Hesse,1922,28.2,Filosofia
+La nausea,Jean-Paul Sartre,1938,13.14La peste,Filosofia
+La peste,Albert Camus,1947,27.82Il lupo della steppa,Filosofia
+Il lupo della steppa,Hermann Hesse,1927,28.63,Filosofia
+Fahrenheit 451,Ray Bradbury,1953,24.181984,Fantascienza
+1984,George Orwell,1949,9.57,Fantascienza
+Viaggio al centro della Terra,Jules Verne,1864,25.68Frankenstein,Fantascienza
+Frankenstein,Mary Shelley,1818,10.81prova,Fantascienza

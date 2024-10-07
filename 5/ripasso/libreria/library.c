@@ -10,6 +10,7 @@
 #define CATEGORY_LENGTH 50
 #define N_CATEGORIES 4
 
+
 // Definizione della struct Book
 typedef struct {
     char title[TITLE_LENGTH];
@@ -98,6 +99,7 @@ int menu(int choice) {
   printf("[2] Aggiungi un elemento all' array \n");  
   printf("[3] Modifica un elementlo dell'array \n"); 
   printf("[4] Elimina un elementlo dell'array \n"); 
+  printf("[5] Salva \n"); 
 
   printf("inserire opzione desiderata (scegliere -1 per uscire):");
   scanf("%d", &choice);
@@ -176,6 +178,36 @@ int chooseCategory(Category *categories)
 
     return supp;
 }
+
+//funzione che esporta tutto il contenuto dell'array su file
+void exportToFile(Category *categories)
+{
+    FILE *dest;
+    //apro il file in modalità scrittura
+    dest = fopen("libreria_libri.csv", "w");
+
+    if(dest == NULL)
+    {
+        printf("Errore apertura del file");
+        exit(-1);
+    }
+
+    //scrivo l'intestazione del file
+    fprintf(dest, "title,author,year,price,category\n");
+
+    for(int i = 0; i < N_CATEGORIES; i++)
+    {
+        for(int k = 0; k < categories[i].cont;k++)
+        {
+            Book *supp = &categories[i].books[k];
+
+            fprintf(dest, "%s,%s,%s,%s,%s\n",supp->title, supp->author, supp->year, supp->price, categories[i].categoryName);        
+        }
+    }
+
+    //chiudo il file
+    fclose(dest);
+}
 int main(int argc, char **argv) {
 
     int choice; //scelta che effettuerà l'utente nel programma
@@ -226,14 +258,31 @@ int main(int argc, char **argv) {
             break;
 
             case 3:
-            //trova e modifica elemento di un libro
-            
+                //trova e modifica elemento di un libro
+
+                //faccio scegliere all'utente la categoria
+                supp = chooseCategory(categories);    
+                
+                //cerco il libro da modificare
+                index = findBook(tempTitle, categories[supp]);
+
+                if(index != -1)
+                {
+                    //gli cancello il vecchio libro
+                    deleteBook(&categories[supp], index);
+
+                    //gli faccio aggiungere il nuovo libro coi dati modificati
+                    addBook(newBook(temp), &categories[supp]);
+
+                }
+                else{
+                    printf("Libro non trovato \n");
+                }                           
+
             break;
 
             case 4:
-            //ricerca di un libro nella libreria e lo elimina
-
-            
+            //ricerca di un libro nella libreria e lo elimina            
 
             printf("inserire titolo del libro da eliminare \n");
             scanf("%s", tempTitle);
@@ -253,6 +302,13 @@ int main(int argc, char **argv) {
             else{
                 printf("Libro non trovato \n");
             }
+            break;
+            
+            case 5:
+                //esporta il contenuto dell'array su file
+                exportToFile(categories);
+
+                printf("Salvataggio avvenuto con successo \n");
             break;
         
         }
