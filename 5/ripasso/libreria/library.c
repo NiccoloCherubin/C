@@ -140,6 +140,9 @@ Book newBook(Book book)
 int main(int argc, char **argv) {
 
     int choice;
+    int supp;
+    Book temp;
+
 
     // Inizializzo le categorie che utilizzerò per suddividere i libri
     Category categories[N_CATEGORIES] = {
@@ -170,9 +173,20 @@ int main(int argc, char **argv) {
                 //stampa a video l'array
                 printArr(categories);
             break;                
-            case2:
+            case 2:
                 //crea un nuovo libro e lo aggiunge nella libreria
-            Book temp;
+
+                do {
+                    printf("Scegli la categoria nella quale aggiungere l'array \n");
+                    for (int i = 0; i < N_CATEGORIES; i++) 
+                    {
+                        printf("[%d] %s \n", i, categories[i].categoryName);
+                    }
+                    scanf("%d", &supp);
+                
+                }while (supp < 0 || supp > N_CATEGORIES); //controlla se ha fatto una scelta valida
+
+                addBook(newBook(temp), &categories[supp]);
             
 
             break;
