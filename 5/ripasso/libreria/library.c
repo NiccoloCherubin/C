@@ -258,8 +258,9 @@ int main(int argc, char **argv) {
             break;
 
             case 3:
-                //trova e modifica elemento di un libro
-
+                //trova e modifica di un libro
+                printf("inserire titolo del libro da eliminare \n");
+                scanf("%s", tempTitle);
                 //faccio scegliere all'utente la categoria
                 supp = chooseCategory(categories);    
                 
