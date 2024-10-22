@@ -33,7 +33,7 @@ int main(int argc, char **argv)
     scanf("%s", str);
 
     //scrivo al server stringa inserita dall'utente
-    write(socketfd, str, sizeof(str));
+    write(socketfd, str, sizeof(str)+1);
 
     //leggo dal server se la stringa è palindroma
     read(socketfd,&palindroma , sizeof(int));
