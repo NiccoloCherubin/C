@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include <time.h>
 
-#define SERVERPORT 1313
+#define SERVERPORT 1314
 #define DIM 50
 
 // funzione che riempie l'array con numeri casuali

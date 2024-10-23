@@ -5,7 +5,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#define SERVERPORT 1313
+#define SERVERPORT 1314
 #define DIM 50
 
 // FUNZIONE CHE CALCOLA LA SOMMA
@@ -68,12 +68,12 @@ int main(int argc, char **argv) {
     printf("somma : %d\n", somma);
 
     // mando al client i risultati
-    if(write(socketfd, &somma, sizeof(somma))<0)
+    if(write(soa, &somma, sizeof(somma))<0)
     {
         perror("Errore scrittura somma al client \n");
         exit(-1);
     }
-    if(write(socketfd, &media, sizeof(media)) < 0)
+    if(write(soa, &media, sizeof(media)) < 0)
     {
         perror("Errore scrittura media al client \n");
         exit(-1);
