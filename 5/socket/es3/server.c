@@ -63,8 +63,6 @@ int main(int argc, char ** argv)
 
         //scrivo al client
         write(soa, &palindromo, sizeof(int));
-
-        close(soa);
     }
 
 
