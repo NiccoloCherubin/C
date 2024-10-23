@@ -40,7 +40,11 @@ int main()
     
     socketfd=socket(AF_INET,SOCK_STREAM,0);
     
-    bind(socketfd,(struct sockaddr*)&servizio,sizeof(servizio));
+    if(bind(socketfd,(struct sockaddr*)&servizio,sizeof(servizio)) < 0)
+    {
+        perror("Errore nella bind \n");
+        exit(-1);
+    }
     // metto il server in ascolto
     listen(socketfd,10);
     // ciclo infinito

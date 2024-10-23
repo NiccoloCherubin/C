@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <sys/socket.h>
 #include <sys/types.h>
-#include <time.h>
 #include <unistd.h>
 
 #define SERVERPORT 1313
