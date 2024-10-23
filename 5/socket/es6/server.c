@@ -55,7 +55,7 @@ int main(int argc, char **argv) {
     soa = accept(socketfd, (struct sockaddr *)&addClient, &clientLen);
 
     // leggo array dal client
-    if(read(socketfd, arr, sizeof(arr))<0)
+    if(read(soa, arr, sizeof(arr))<0)
     {
         perror("Errore lettura array dal client \n");
         exit(-1);
