@@ -100,5 +100,7 @@ int main(int argc, char **argv)
         close(soa);
     }
 
+    free(risposta);
+
     return 0;
 }
