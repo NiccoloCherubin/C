@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Domande Aperte</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Domande Aperte</h1>
+        <form id="form-aperte">
+            <div id="domandaContainer"></div>
+            <button type="button" id="precedente">Precedente</button>
+            <button type="button" id="successivo">Successivo</button>
+            <button type="button" id="salva">Salva Risposte</button>
+        </form>
+        <button onclick="location.href='index.html'">Torna alla Homepage</button>
+        <button id="scarica">Scarica Risposte</button>
+    </div>
+
+    <script>
+        let domandaCorrente = 0;
+        let domandeAperte = [];
+
+        // Carica le domande dal file JSON
+        fetch('domande.json')
+            .then(response => response.json())
+            .then(data => {
+                domandeAperte = data.domande_aperta;
+                caricaDomandaAperta();
+            })
+            .catch(error => console.error('Errore nel caricamento del file JSON:', error));
+
+        // Funzione per caricare la domanda corrente
+        function caricaDomandaAperta() {
+            const domandaContainer = document.getElementById('domandaContainer');
+            domandaContainer.innerHTML = `
+                <label for="domanda${domandaCorrente}">${domandeAperte[domandaCorrente].testo}</label>
+                <textarea id="domanda${domandaCorrente}" name="domanda${domandaCorrente}" rows="4" cols="50"></textarea>
+            `;
+        }
+
+        // Funzione per salvare la risposta
+        function salvaRispostaAperta() {
+            const risposta = document.getElementById(`domanda${domandaCorrente}`).value;
+            if (risposta) {
+                localStorage.setItem(`risposta_aperte_${domandaCorrente}`, risposta);
+                alert('Risposta salvata!');
+            } else {
+                alert('Rispondi alla domanda!');
+            }
+        }
+
+        // Funzione per passare alla domanda successiva
+        function successivo() {
+            if (domandaCorrente < domandeAperte.length - 1) {
+                domandaCorrente++;
+                caricaDomandaAperta();
+            }
+        }
+
+        // Funzione per tornare alla domanda precedente
+        function precedente() {
+            if (domandaCorrente > 0) {
+                domandaCorrente--;
+                caricaDomandaAperta();
+            }
+        }
+
+        // Funzione per scaricare le risposte come file JSON
+        function scaricaRisposte() {
+            let risposte = {};
+            for (let i = 0; i < domandeAperte.length; i++) {
+                let risposta = localStorage.getItem(`risposta_aperte_${i}`);
+                if (risposta) {
+                    risposte[`domanda_${i + 1}`] = risposta;
+                }
+            }
+
+            const blob = new Blob([JSON.stringify(risposte, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'risposte_aperte.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        // Event listeners per i tasti
+        document.getElementById('successivo').addEventListener('click', successivo);
+        document.getElementById('precedente').addEventListener('click', precedente);
+        document.getElementById('salva').addEventListener('click', salvaRispostaAperta);
+        document.getElementById('scarica').addEventListener('click', scaricaRisposte);
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+    "domande_aperta": [
+        {"id": 1, "testo": "Definisci il termine 'socket' in C e descrivi la sua importanza nella programmazione di rete."},
+        {"id": 2, "testo": "Elenca e spiega i passi essenziali per implementare un socket server in C."},
+        {"id": 3, "testo": "Quali sono le principali differenze tra i protocolli TCP e UDP quando si usano i socket in C?"},
+        {"id": 4, "testo": "Descrivi il ruolo della funzione 'connect' in un socket client in C."},
+        {"id": 5, "testo": "Spiega come la funzione 'accept' viene utilizzata in un server socket e quale scopo serve."}
+    ],
+    "domande_crocetta": [
+        {
+            "id": "A",
+            "testo": "Quale funzione crea un socket in C?",
+            "opzioni": ["socket()", "connect()", "listen()", "accept()"],
+            "corretta": "socket()"
+        },
+        {
+            "id": "B",
+            "testo": "Quale funzione associa un socket a un indirizzo di rete specifico?",
+            "opzioni": ["socket()", "bind()", "send()", "listen()"],
+            "corretta": "bind()"
+        },
+        {
+            "id": "C",
+            "testo": "Quale funzione permette di ascoltare connessioni in ingresso su un socket?",
+            "opzioni": ["bind()", "accept()", "listen()", "connect()"],
+            "corretta": "listen()"
+        },
+        {
+            "id": "D",
+            "testo": "Qual è la funzione utilizzata per inviare dati tramite un socket?",
+            "opzioni": ["send()", "recv()", "bind()", "listen()"],
+            "corretta": "send()"
+        },
+        {
+            "id": "E",
+            "testo": "Quale funzione chiude un socket aperto?",
+            "opzioni": ["close()", "shutdown()", "disconnect()", "terminate()"],
+            "corretta": "close()"
+        }
+    ]
+}
