@@ -6,6 +6,8 @@
     <title>Pagina con Navbar e Footer</title>
     <!-- Collegamento a Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <!-- Navbar -->
@@ -39,17 +41,111 @@
 
     <!-- Contenuto principale -->
     <div class="container my-5">
-        <h1 class="text-center">HOMEPAGE</h1>
+        <h1 class="text-center mb-4">HOMEPAGE</h1>
+
+        <!-- Alert introduttivo -->
+        <div class="alert alert-info" role="alert">
+            Benvenuto! In questa pagina esplorerai il concetto di <strong>socket</strong>, la pila ISO/OSI, i protocolli e un glossario di termini essenziali.
+        </div>
+
+        <!-- Cards -->
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Socket</h5>
+                        <p class="card-text">I socket sono un'interfaccia per la comunicazione tra processi su una rete. Scopri di più cliccando qui sotto.</p>
+                        <a href="socket.html" class="btn btn-primary">Vai ai Socket</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Pila ISO/OSI</h5>
+                        <p class="card-text">La pila ISO/OSI descrive il modello standard per la comunicazione tra dispositivi di rete.</p>
+                        <a href="pilaOsi.html" class="btn btn-primary">Approfondisci</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Protocolli</h5>
+                        <p class="card-text">I protocolli regolano la trasmissione dei dati. Scopri i più importanti in questa sezione.</p>
+                        <a href="protocolli.html" class="btn btn-primary">Visualizza Protocolli</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordion per approfondimenti -->
+        <div class="accordion mt-5" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Cos'è un Socket?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Un <strong>socket</strong> è un punto di comunicazione tra due macchine, utilizzato per inviare e ricevere dati su una rete. È alla base della comunicazione in rete sia per applicazioni client-server che peer-to-peer.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Modello ISO/OSI
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Il modello ISO/OSI è un framework a 7 livelli che definisce come i dati viaggiano da un dispositivo a un altro su una rete. Ogni livello ha uno scopo specifico.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Protocooli
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        I protocolli in informatica sono utilizzati per definire delle regole. Ogni protocollo ha uno scopo diverso.
+                    </div>
+                </div>
+            </div>
+        </div>        
+
+        <!-- Tooltip -->
+        <p class="mt-4">
+            Passa il mouse su <span data-bs-toggle="tooltip" title="Una connessione tra due processi in rete.">socket</span> per una definizione rapida.
+        </p>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 La tua Azienda. Tutti i diritti riservati.</p>
-        <p><a href="https://www.facebook.com" class="text-white" target="_blank">Facebook</a> | <a href="https://www.twitter.com" class="text-white" target="_blank">Twitter</a> | <a href="https://www.instagram.com" class="text-white" target="_blank">Instagram</a></p>
-    </footer>
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <p>&copy; 2024 Niccolo' Cherubin. Tutti i diritti riservati.</p>
+        <p>
+            <a href="https://github.com/NiccoloCherubin" class="text-white" target="_blank">github</a>
+        </p>
+    </footer>   
+    
 
     <!-- Collegamento a Bootstrap 5 JS e Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <!-- Abilitazione dei tooltip -->
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
 </body>
 </html>
