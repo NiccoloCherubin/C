@@ -8,59 +8,73 @@ body, h1, h2, p, section, input, button {
 /* Stile principale */
 body {
     font-family: 'Verdana', sans-serif;
-    background-color: #e9ecef;
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradiente di sfondo */
     color: #222;
     line-height: 1.5;
+    height: 100vh; /* Imposta l'altezza al 100% per l'intera pagina */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Contenitore principale */
 .main-container {
     max-width: 750px;
-    margin: 40px auto;
-    padding: 20px;
+    margin: 40px;
+    padding: 40px;
     background: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
+    width: 100%; /* Rende il contenitore più responsivo */
+    transition: transform 0.3s ease-in-out;
+}
+
+.main-container:hover {
+    transform: scale(1.02); /* Leggero ingrandimento quando l'utente passa sopra */
 }
 
 /* Titolo e descrizione */
 .main-header {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .main-header h1 {
-    font-size: 28px;
+    font-size: 32px;
     color: #0056d6;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
 .main-header p {
-    font-size: 17px;
+    font-size: 18px;
     color: #444;
 }
 
 /* Sezioni */
 .content-section {
-    margin-top: 15px;
+    margin-top: 25px;
 }
 
 .query, .final-actions {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .query-title {
-    font-size: 22px;
+    font-size: 24px;
     color: #111;
 }
 
 /* Timer e Counter */
 #timer-display {
-    font-size: 15px;
+    font-size: 18px;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 #answer-counter {
+    font-size: 18px;
     font-weight: bold;
     color: #0056d6;
 }
@@ -69,18 +83,19 @@ body {
 input[type=button], button {
     display: inline-block;
     margin: 8px;
-    padding: 12px 20px;
-    font-size: 14px;
+    padding: 15px 25px;
+    font-size: 16px;
     color: #ffffff;
     background-color: #0071e3;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.25s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 input[type=button]:hover, button:hover {
     background-color: #005cb2;
+    transform: translateY(-2px); /* Effetto di movimento quando l'utente passa sopra */
 }
 
 /* Bottoni specifici */
@@ -94,13 +109,33 @@ input[type=button]:hover, button:hover {
 
 /* Sezione delle risposte a opzione */
 .choice-buttons input[type=button] {
-    padding: 8px 18px;
+    padding: 10px 18px;
 }
 
 /* Footer */
 .page-footer {
-    margin-top: 15px;
+    margin-top: 20px;
     font-size: 13px;
     color: #555;
     text-align: center;
+}
+
+/* Layout responsivo */
+@media (max-width: 600px) {
+    .main-container {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .main-header h1 {
+        font-size: 26px;
+    }
+
+    .main-header p {
+        font-size: 14px;
+    }
+
+    #timer-display, #answer-counter {
+        font-size: 16px;
+    }
 }
