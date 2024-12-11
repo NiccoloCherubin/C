@@ -19,13 +19,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="socket.html">Socket</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="pilaOsi.html">Pila Iso OSi</a>
+                        <a class="nav-link active" href="pilaOsi.html">Pila ISO/OSI</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="protocolli.html">Protocolli</a>
@@ -40,124 +40,21 @@
 
     <!-- Contenuto principale -->
     <div class="container my-5">
-        <h1 class="text-center mb-4">Pila ISO/OSI</h1>
+        <h1 class="text-center mb-4" id="page-title">Pila ISO/OSI</h1>
 
         <!-- Alert -->
-        <div class="alert alert-info text-center" role="alert">
-            La Pila ISO/OSI è un modello concettuale che descrive il funzionamento delle reti di telecomunicazione in 7 livelli.
+        <div id="alert-container" class="alert alert-info text-center" role="alert">
+            <!-- Contenuto dell'alert -->
         </div>
 
         <!-- Card con introduzione -->
-        <div class="card mb-4">
-            <div class="card-body">
-                <h5 class="card-title">Introduzione al modello ISO/OSI</h5>
-                <p class="card-text">
-                    Il modello ISO/OSI è stato sviluppato per standardizzare le comunicazioni tra sistemi informatici, suddividendo le funzioni di rete in sette livelli:
-                    <span class="badge bg-primary">Fisico</span>, 
-                    <span class="badge bg-secondary">Collegamento dati</span>, 
-                    <span class="badge bg-success">Rete</span>, 
-                    <span class="badge bg-danger">Trasporto</span>, 
-                    <span class="badge bg-warning text-dark">Sessione</span>, 
-                    <span class="badge bg-info text-dark">Presentazione</span>, 
-                    <span class="badge bg-dark">Applicazione</span>.
-                </p>
-            </div>
+        <div id="intro-card" class="card mb-4">
+            <!-- Contenuto della card -->
         </div>
 
         <!-- Accordion per descrivere i livelli -->
         <div class="accordion" id="accordionOSI">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Livello 1: Fisico
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionOSI">
-                    <div class="accordion-body">
-                        Come il nome suggerisce, il livello fisico si occupa della strumentazione che consente il trasferimento dei dati, come cavi e router installati sulla rete. Gli standard per la trasmissione di rete sono essenziali in questo livello. Senza tali standard, la trasmissione tra produttori di dispositivi differenti sarebbe impossibile.                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Livello 2: Collegamento dati
-                    </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionOSI">
-                    <div class="accordion-body">
-                        Il livello rete facilita la comunicazione tra reti differenti, ma il livello collegamento dati si occupa di trasferire informazioni sulla stessa rete. Il livello collegamento dati trasforma i pacchetti ricevuti dal livello rete in frame. Come il livello rete, anche il livello collegamento dati è responsabile del controllo degli errori e del flusso dei dati per assicurare che il trasferimento vada a buon fine.
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Livello 3: Rete
-                    </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionOSI">
-                    <div class="accordion-body">
-                        Il livello rete si occupa di suddividere i dati sul dispositivo del mittente e riassemblarli sul dispositivo del destinatario quando la trasmissione avviene attraverso due reti differenti. Quando invece la comunicazione avviene all'interno della stessa rete, il livello rete non è necessario, ma la maggior parte degli utenti si collegano ad altre reti, come le reti cloud. Quando i dati viaggiano attraverso reti differenti, il livello rete si occupa di creare piccoli pacchetti di dati inviati a destinazione, e ricostruiti poi sul dispositivo del destinatario.
-                    </div>
-                </div>
-            </div>
-                <!-- Livello 4: Trasporto -->
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingFour">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    Livello 4: Trasporto
-                </button>
-            </h2>
-            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionOSI">
-                <div class="accordion-body">
-                    Responsabile del prendere i dati e spezzettarli in segmenti più piccoli. Il livello trasporto si occupa anche del controllo degli errori e del riassemblaggio dei dati.
-                </div>
-            </div>
-        </div>
-
-        <!-- Livello 5: Sessione -->
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingFive">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                    Livello 5: Sessione
-                </button>
-            </h2>
-            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionOSI">
-                <div class="accordion-body">
-                    Si occupa di creare, gestire e chiudere le sessioni tra dispositivi.
-                </div>
-            </div>
-        </div>
-
-        <!-- Livello 6: Presentazione -->
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingSix">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                    Livello 6: Presentazione
-                </button>
-            </h2>
-            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionOSI">
-                <div class="accordion-body">
-                    Responsabile della traduzione, crittografia e compressione dei dati.
-                </div>
-            </div>
-        </div>
-
-        <!-- Livello 7: Applicazione -->
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingSeven">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                    Livello 7: Applicazione
-                </button>
-            </h2>
-            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionOSI">
-                <div class="accordion-body">
-                    Interfaccia diretta con l'utente. Include protocolli come HTTP e SMTP.
-                </div>
-            </div>
-        </div>
-
-            <!-- Aggiungere altri livelli secondo necessità -->
+            <!-- I livelli verranno generati dinamicamente -->
         </div>
     </div>
 
@@ -172,5 +69,8 @@
     <!-- Collegamento a Bootstrap 5 JS e Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <!-- Caricamento dei contenuti dinamici -->
+    <script src="js/pilaOsi.js"></script>
 </body>
 </html>

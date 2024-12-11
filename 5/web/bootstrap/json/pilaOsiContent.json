@@ -1,0 +1,48 @@
+{
+    "alert": {
+      "title": "La Pila ISO/OSI",
+      "message": "La Pila ISO/OSI è un modello concettuale che descrive il funzionamento delle reti di telecomunicazione in 7 livelli."
+    },
+    "introCard": {
+      "title": "Introduzione al modello ISO/OSI",
+      "text": "Il modello ISO/OSI è stato sviluppato per standardizzare le comunicazioni tra sistemi informatici, suddividendo le funzioni di rete in sette livelli. Ogni livello ha uno scopo specifico e contribuisce a garantire che i dati possano essere trasmessi correttamente attraverso diverse reti."
+    },
+    "levels": [
+      {
+        "name": "Fisico",
+        "description": "Il livello fisico si occupa della strumentazione che consente il trasferimento dei dati, come cavi e router. Gli standard di trasmissione sono essenziali in questo livello per garantire l'interoperabilità tra dispositivi differenti.",
+        "badge": "bg-primary"
+      },
+      {
+        "name": "Collegamento Dati",
+        "description": "Il livello collegamento dati trasforma i pacchetti ricevuti dal livello rete in frame e si occupa del controllo degli errori e del flusso di dati. Garantisce una comunicazione affidabile all'interno della stessa rete.",
+        "badge": "bg-secondary"
+      },
+      {
+        "name": "Rete",
+        "description": "Il livello rete si occupa di instradare i pacchetti tra reti differenti, suddividendo i dati in pacchetti più piccoli. Quando la comunicazione avviene all'interno della stessa rete, il livello rete non è necessario.",
+        "badge": "bg-success"
+      },
+      {
+        "name": "Trasporto",
+        "description": "Il livello trasporto si occupa di segmentare i dati e garantire che vengano ricevuti correttamente dal destinatario, gestendo anche il controllo degli errori e il riassemblaggio dei pacchetti.",
+        "badge": "bg-danger"
+      },
+      {
+        "name": "Sessione",
+        "description": "Il livello sessione è responsabile per la creazione, gestione e chiusura delle sessioni di comunicazione tra dispositivi. Gestisce la sincronizzazione delle comunicazioni.",
+        "badge": "bg-warning text-dark"
+      },
+      {
+        "name": "Presentazione",
+        "description": "Il livello presentazione si occupa della traduzione, crittografia e compressione dei dati. È responsabile per la gestione della forma dei dati che vengono trasmessi.",
+        "badge": "bg-info text-dark"
+      },
+      {
+        "name": "Applicazione",
+        "description": "Il livello applicazione è il livello più vicino all'utente finale. Esso include protocolli di rete come HTTP e SMTP, che gestiscono la comunicazione tra applicazioni.",
+        "badge": "bg-dark"
+      }
+    ]
+  }
+  

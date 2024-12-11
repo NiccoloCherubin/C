@@ -1,0 +1,24 @@
+{
+    "title": "Socket",
+    "cards": [
+      {
+        "header": "Cosa sono i Socket",
+        "body": "I socket sono endpoint di comunicazione utilizzati per stabilire connessioni tra dispositivi in una rete. Permettono ai processi di comunicare utilizzando protocolli come TCP o UDP."
+      },
+      {
+        "header": "Tipi di Socket",
+        "body": "<ul class='list-group list-group-flush'><li class='list-group-item'>Socket TCP: forniscono una comunicazione affidabile.</li><li class='list-group-item'>Socket UDP: utilizzati per comunicazioni veloci ma non affidabili.</li><li class='list-group-item'>Socket Raw: permettono l'accesso diretto ai protocolli di rete.</li></ul>"
+      }
+    ],
+    "accordion": [
+      {
+        "header": "Come funzionano i Socket",
+        "body": "I socket funzionano come punti di connessione tra due processi. Uno dei processi 'ascolta' su una porta specifica, mentre l'altro si connette a quella porta. Dopo la connessione, i dati possono essere inviati e ricevuti attraverso il socket."
+      },
+      {
+        "header": "Esempi di Utilizzo",
+        "body": "I socket sono utilizzati in molte applicazioni, come server web, client di posta elettronica e giochi online. Un esempio classico è la connessione tra un browser web e un server web tramite il protocollo HTTP."
+      }
+    ]
+  }
+  

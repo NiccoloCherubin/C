@@ -1,0 +1,41 @@
+{
+    "alert": {
+      "title": "Benvenuto!",
+      "message": "In questa pagina esplorerai il concetto di <strong>socket</strong>, la pila ISO/OSI, i protocolli e un glossario di termini essenziali."
+    },
+    "cards": [
+      {
+        "title": "Socket",
+        "description": "I socket sono un'interfaccia per la comunicazione tra processi su una rete. Scopri di più cliccando qui sotto.",
+        "link": "socket.html",
+        "buttonText": "Vai ai Socket"
+      },
+      {
+        "title": "Pila ISO/OSI",
+        "description": "La pila ISO/OSI descrive il modello standard per la comunicazione tra dispositivi di rete.",
+        "link": "pilaOsi.html",
+        "buttonText": "Approfondisci"
+      },
+      {
+        "title": "Protocolli",
+        "description": "I protocolli regolano la trasmissione dei dati. Scopri i più importanti in questa sezione.",
+        "link": "protocolli.html",
+        "buttonText": "Visualizza Protocolli"
+      }
+    ],
+    "accordion": [
+      {
+        "heading": "Cos'è un Socket?",
+        "body": "Un <strong>socket</strong> è un punto di comunicazione tra due macchine, utilizzato per inviare e ricevere dati su una rete. È alla base della comunicazione in rete sia per applicazioni client-server che peer-to-peer."
+      },
+      {
+        "heading": "Modello ISO/OSI",
+        "body": "Il modello ISO/OSI è un framework a 7 livelli che definisce come i dati viaggiano da un dispositivo a un altro su una rete. Ogni livello ha uno scopo specifico."
+      },
+      {
+        "heading": "Protocolli",
+        "body": "I protocolli in informatica sono utilizzati per definire delle regole. Ogni protocollo ha uno scopo diverso."
+      }
+    ]
+  }
+  

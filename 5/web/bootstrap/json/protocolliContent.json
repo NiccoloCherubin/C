@@ -1,0 +1,72 @@
+{
+    "alert": {
+      "title": "Protocolli di Rete",
+      "message": "I protocolli di rete sono fondamentali per garantire la comunicazione tra dispositivi. Ogni protocollo ha un ruolo specifico e viene utilizzato in base alle esigenze dell'applicazione."
+    },
+    "cardContent": [
+      {
+        "title": "TCP/IP",
+        "description": "TCP/IP è un protocollo di comunicazione che consente il trasferimento affidabile dei dati su reti come Internet.",
+        "link": "https://en.wikipedia.org/wiki/Internet_protocol_suite",
+        "linkText": "Scopri di più",
+        "buttonClass": "btn-primary"
+      },
+      {
+        "title": "HTTP/HTTPS",
+        "description": "HTTP è il protocollo utilizzato per trasferire pagine web. HTTPS è la sua versione sicura, con crittografia.",
+        "link": "https://en.wikipedia.org/wiki/HTTP",
+        "linkText": "Leggi altro",
+        "buttonClass": "btn-success"
+      },
+      {
+        "title": "FTP",
+        "description": "FTP è un protocollo utilizzato per trasferire file tra computer in una rete.",
+        "link": "https://en.wikipedia.org/wiki/File_Transfer_Protocol",
+        "linkText": "Ulteriori dettagli",
+        "buttonClass": "btn-warning"
+      }
+    ],
+    "tableData": [
+      {
+        "protocol": "SMTP",
+        "description": "Protocollo per l'invio di email.",
+        "port": "25"
+      },
+      {
+        "protocol": "DNS",
+        "description": "Risolve i nomi di dominio in indirizzi IP.",
+        "port": "53"
+      },
+      {
+        "protocol": "SSH",
+        "description": "Permette connessioni remote sicure.",
+        "port": "22"
+      },
+      {
+        "protocol": "DHCP",
+        "description": "Assegna dinamicamente indirizzi IP.",
+        "port": "67"
+      },
+      {
+        "protocol": "HTTP",
+        "description": "Permette passaggio di pagine html.",
+        "port": "80"
+      },
+      {
+        "protocol": "HTTPS",
+        "description": "Permette passaggio di pagine html in modo criptato.",
+        "port": "443"
+      },
+      {
+        "protocol": "FTP",
+        "description": "Permette passaggio di file.",
+        "port": "20"
+      },
+      {
+        "protocol": "SMTP",
+        "description": "Permette comunicazione tramite mail.",
+        "port": "465"
+      }
+    ]
+  }
+  

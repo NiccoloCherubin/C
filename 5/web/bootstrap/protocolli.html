@@ -28,7 +28,7 @@
                         <a class="nav-link" href="pilaOsi.html">Pila Iso OSI</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="protocolli.html">Protocolli</a>
+                        <a class="nav-link active" href="protocolli.html">Protocolli</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="glossario.html">Glossario</a>
@@ -40,46 +40,20 @@
 
     <!-- Contenuto principale -->
     <div class="container my-5">
-        <h1 class="text-center mb-4">Protocolli di Rete</h1>
-
-        <!-- Griglia con Card -->
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">TCP/IP</h5>
-                        <p class="card-text">TCP/IP è un protocollo di comunicazione che consente il trasferimento affidabile dei dati su reti come Internet.</p>
-                        <a href="https://en.wikipedia.org/wiki/Internet_protocol_suite" target="_blank" class="btn btn-primary">Scopri di più</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">HTTP/HTTPS</h5>
-                        <p class="card-text">HTTP è il protocollo utilizzato per trasferire pagine web. HTTPS è la sua versione sicura, con crittografia.</p>
-                        <a href="https://en.wikipedia.org/wiki/HTTP" target="_blank" class="btn btn-success">Leggi altro</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">FTP</h5>
-                        <p class="card-text">FTP è un protocollo utilizzato per trasferire file tra computer in una rete.</p>
-                        <a href="https://en.wikipedia.org/wiki/File_Transfer_Protocol" target="_blank" class="btn btn-warning">Ulteriori dettagli</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <h1 class="text-center mb-4" id="page-title">Protocolli di Rete</h1>
 
         <!-- Alert informativo -->
-        <div class="alert alert-info mt-5" role="alert">
-            I protocolli di rete sono fondamentali per garantire la comunicazione tra dispositivi. Ogni protocollo ha un ruolo specifico e viene utilizzato in base alle esigenze dell'applicazione.
+        <div id="alert-container" class="alert alert-info mt-5" role="alert">
+            <!-- Contenuto dell'alert -->
+        </div>
+
+        <!-- Griglia con Card -->
+        <div class="row" id="card-container">
+            <!-- Le card saranno generate dinamicamente -->
         </div>
 
         <!-- Tabella con esempi di protocolli -->
-        <table class="table table-striped table-bordered mt-4">
+        <table class="table table-striped table-bordered mt-4" id="protocol-table">
             <thead class="table-dark">
                 <tr>
                     <th>Protocollo</th>
@@ -88,46 +62,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>SMTP</td>
-                    <td>Protocollo per l'invio di email.</td>
-                    <td>25</td>
-                </tr>
-                <tr>
-                    <td>DNS</td>
-                    <td>Risolve i nomi di dominio in indirizzi IP.</td>
-                    <td>53</td>
-                </tr>
-                <tr>
-                    <td>SSH</td>
-                    <td>Permette connessioni remote sicure.</td>
-                    <td>22</td>
-                </tr>
-                <tr>
-                    <td>DHCP</td>
-                    <td>Assegna dinamicamente indirizzi IP.</td>
-                    <td>67</td>
-                </tr>
-                <tr>
-                    <td>HTTP</td>
-                    <td>Permette passaggio di pagine html.</td>
-                    <td>80</td>
-                </tr>
-                <tr>
-                    <td>HTTPS</td>
-                    <td>Permette passaggio di pagine html in modo criptato.</td>
-                    <td>443</td>
-                </tr>
-                <tr>
-                    <td>FTP</td>
-                    <td>Permette passaggio di file.</td>
-                    <td>20</td>
-                </tr>
-                <tr>
-                    <td>SMTP</td>
-                    <td>Permette comunicazione tramite mail.</td>
-                    <td>465</td>
-                </tr>
+                <!-- I dati della tabella saranno aggiunti dinamicamente -->
             </tbody>
         </table>
     </div>
@@ -143,5 +78,8 @@
     <!-- Collegamento a Bootstrap 5 JS e Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <!-- Caricamento dei contenuti dinamici -->
+    <script src="js/protocolli.js"></script>
 </body>
 </html>
