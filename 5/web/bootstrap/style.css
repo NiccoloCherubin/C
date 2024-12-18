@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #1b2b2b;
+    color: #e5e5e5;
+}
+.card-body {
+    color: #0a0a0a; /* Bianco leggermente attenuato */
+}
+.table-dark {
+    background-color: #333333; /* Sfondo scuro per l'intestazione */
+    color: #ffffff; /* Testo bianco */
+}
+.table-striped tbody tr {
+    background-color: #1f1f1f; /* Sfondo uniforme per tutte le righe */
+}
+.table-bordered td, .table-bordered th {
+    border: 1px solid #444444; /* Colore del bordo */
+}
+.table tbody tr, .table tbody tr td, .table tbody tr th {
+    color: #e2dcdc !important; /* Testo bianco forzato per tutte le celle */
+}
+main {
+    flex: 1;
+}
