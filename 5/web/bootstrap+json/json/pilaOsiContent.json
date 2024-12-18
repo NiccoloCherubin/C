@@ -1,10 +1,10 @@
 {
     "alert": {
-      "title": "La Pila ISO/OSI",
+      "title": "Pila Iso Osi",
       "message": "La Pila ISO/OSI è un modello concettuale che descrive il funzionamento delle reti di telecomunicazione in 7 livelli."
     },
     "introCard": {
-      "title": "Introduzione al modello ISO/OSI",
+      "title": "Introduzione al modello Iso Osi",
       "text": "Il modello ISO/OSI è stato sviluppato per standardizzare le comunicazioni tra sistemi informatici, suddividendo le funzioni di rete in sette livelli. Ogni livello ha uno scopo specifico e contribuisce a garantire che i dati possano essere trasmessi correttamente attraverso diverse reti."
     },
     "levels": [
