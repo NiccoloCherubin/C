@@ -1,0 +1,126 @@
+/* Container principale che racchiude immagine e descrizione */
+.prodotto-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Singolo prodotto */
+.prodotto-item {
+    width: 48%;
+    margin-bottom: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenitore dell'immagine e della descrizione dell'immagine */
+.img-desc-container {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+/* Stile per l'immagine del prodotto */
+.prodotto-img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+/* Descrizione dell'immagine a destra dell'immagine */
+.img-desc {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Stile per la descrizione del prodotto sotto l'immagine */
+.prodotto-desc {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    flex: 1 1 50%;
+}
+
+/* Nome prodotto */
+.prodotto-nome {
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+/* Media query per schermi più piccoli */
+@media (max-width: 768px) {
+    .prodotto-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .prodotto-item {
+        width: 80%; /* Il prodotto occuperà l'80% della larghezza */
+        margin-bottom: 20px;
+    }
+
+    .img-desc-container {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .prodotto-img {
+        max-width: 80%; /* L'immagine occuperà l'80% della larghezza */
+        margin-bottom: 10px; /* Aggiungi margine sotto l'immagine */
+    }
+
+    .prodotto-desc {
+        max-width: 80%; /* La descrizione occuperà l'80% della larghezza */
+        text-align: center;
+    }
+    /* Container principale che raccoglie immagine e prezzo */
+.prodotto-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Griglia responsiva */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Singolo prodotto */
+.prodotto-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Stile per l'immagine del prodotto */
+.prodotto-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Prezzo del prodotto */
+.prodotto-prezzo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Media query per schermi più piccoli */
+@media (max-width: 768px) {
+    .prodotto-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Griglia più stretta su dispositivi mobili */
+    }
+}
+
+}

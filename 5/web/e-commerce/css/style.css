@@ -3,3 +3,35 @@ body {
     background-color: #f4f4f4;
     padding: 20px;
 }
+/* Navbar personalizzata */
+.navbar {
+    margin-bottom: 30px; /* Aggiungi uno spazio sotto la navbar */
+}
+
+/* Personalizzazione del logo */
+.navbar-brand {
+    font-size: 28px; /* Aumenta la dimensione del logo */
+    font-weight: bold; /* Aggiungi un po' di enfasi al logo */
+}
+
+/* Personalizzazione dei link nella navbar */
+.navbar-nav .nav-link {
+    font-size: 18px; /* Modifica la dimensione dei link */
+    color: #f8f9fa !important; /* Imposta un colore chiaro per il testo dei link */
+}
+
+/* Hover sugli elementi della navbar */
+.navbar-nav .nav-link:hover {
+    color: #ffd700 !important; /* Colore dorato per il hover sui link */
+    text-decoration: underline; /* Sottolinea i link quando ci si passa sopra */
+}
+
+/* Navbar mobile - Per dispositivi con larghezza minore di 768px */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 24px; /* Riduci la dimensione del logo su dispositivi piccoli */
+    }
+    .navbar-nav .nav-link {
+        font-size: 16px; /* Riduci la dimensione dei link su dispositivi piccoli */
+    }
+}
