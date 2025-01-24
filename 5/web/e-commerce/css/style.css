@@ -1,8 +1,35 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    padding: 20px;
+/* Impostazioni globali */
+:root {
+    --primary-color: #343a40; /* Colore scuro per il footer e navbar */
+    --highlight-color: #ffd700; /* Colore dorato per il hover */
+    --text-light-color: #f8f9fa; /* Colore chiaro per i testi */
+    --font-family: 'Arial', sans-serif;
+    --font-size-base: 18px; /* Dimensione del font base */
+    --font-size-logo: 28px; /* Dimensione del logo */
 }
+
+html, body {
+    height: 100%; /* Impostiamo l'altezza al 100% per fare in modo che occupi tutta la finestra */
+    margin: 0; /* Rimuoviamo i margini di default */
+    font-family: var(--font-family);
+    background-color: #f4f4f4;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container principale che occupa tutta la pagina */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Questo fa sì che il contenuto occupi tutta l'altezza della pagina */
+}
+
+/* Contenuto principale della pagina che occupa lo spazio disponibile */
+.content {
+    flex-grow: 1; /* Questo farà sì che il contenuto occupi tutto lo spazio disponibile */
+}
+
 /* Navbar personalizzata */
 .navbar {
     margin-bottom: 30px; /* Aggiungi uno spazio sotto la navbar */
@@ -10,19 +37,20 @@ body {
 
 /* Personalizzazione del logo */
 .navbar-brand {
-    font-size: 28px; /* Aumenta la dimensione del logo */
-    font-weight: bold; /* Aggiungi un po' di enfasi al logo */
+    font-size: var(--font-size-logo); /* Usa la variabile per il logo */
+    font-weight: bold;
 }
 
 /* Personalizzazione dei link nella navbar */
 .navbar-nav .nav-link {
-    font-size: 18px; /* Modifica la dimensione dei link */
-    color: #f8f9fa !important; /* Imposta un colore chiaro per il testo dei link */
+    font-size: var(--font-size-base); /* Usa la variabile per i link */
+    color: var(--text-light-color) !important; /* Colore chiaro per il testo dei link */
+    transition: color 0.3s ease; /* Transizione morbida sui link */
 }
 
 /* Hover sugli elementi della navbar */
 .navbar-nav .nav-link:hover {
-    color: #ffd700 !important; /* Colore dorato per il hover sui link */
+    color: var(--highlight-color) !important; /* Colore dorato per il hover sui link */
     text-decoration: underline; /* Sottolinea i link quando ci si passa sopra */
 }
 
@@ -33,5 +61,41 @@ body {
     }
     .navbar-nav .nav-link {
         font-size: 16px; /* Riduci la dimensione dei link su dispositivi piccoli */
+    }
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color); /* Usa il colore scuro dal :root */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Questo spinge il footer sempre al fondo della pagina */
+}
+
+/* Stile per i link nel footer */
+footer a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transizione morbida */
+}
+
+/* Hover sui link del footer */
+footer a:hover {
+    color: var(--highlight-color); /* Colore dorato per i link del footer */
+}
+
+/* Media query per schermi più piccoli (mobile) */
+@media (max-width: 576px) {
+    body {
+        padding: 15px; /* Riduci il padding sui dispositivi molto piccoli */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 14px; /* Ulteriore riduzione dei link per schermi piccoli */
+    }
+
+    footer {
+        font-size: 14px; /* Riduci la dimensione del testo del footer */
     }
 }
