@@ -1,17 +1,16 @@
 [
-    {
-      "id": 1,
-      "nome": "Prodotto 1",
-      "descrizione": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque laboriosam illum totam reprehenderit eum.",
-      "immagine": "https://media.istockphoto.com/id/1602458519/it/foto/esplosione-di-polvere-colorata-su-sfondo-bianco.jpg?s=612x612&w=0&k=20&c=p8zsmnvNd6Nj2I0cTE8esB79X_CnjkwH4FUTp3U9_eA=",
-      "descrizione_img": "Immagine del Prodotto 1"
-    },
-    {
-      "id": 2,
-      "nome": "Prodotto 2",
-      "descrizione": "Recusandae, explicabo. Quia fugiat voluptatum illo perspiciatis.",
-      "immagine": "https://media.istockphoto.com/id/1602458519/it/foto/esplosione-di-polvere-colorata-su-sfondo-bianco.jpg?s=612x612&w=0&k=20&c=p8zsmnvNd6Nj2I0cTE8esB79X_CnjkwH4FUTp3U9_eA=",
-      "descrizione_img": "Immagine del Prodotto 2"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "nome": "Prodotto 1",
+    "prezzo": "€19.99",
+    "immagine": "https://media.istockphoto.com/id/1602458519/it/foto/esplosione-di-polvere-colorata-su-sfondo-bianco.jpg?s=612x612&w=0&k=20&c=p8zsmnvNd6Nj2I0cTE8esB79X_CnjkwH4FUTp3U9_eA=",
+    "descrizione_img": "Immagine del Prodotto 1"
+  },
+  {
+    "id": 2,
+    "nome": "Prodotto 2",
+    "prezzo": "€29.99",
+    "immagine": "https://media.istockphoto.com/id/1602458519/it/foto/esplosione-di-polvere-colorata-su-sfondo-bianco.jpg?s=612x612&w=0&k=20&c=p8zsmnvNd6Nj2I0cTE8esB79X_CnjkwH4FUTp3U9_eA=",
+    "descrizione_img": "Immagine del Prodotto 2"
+  }
+]

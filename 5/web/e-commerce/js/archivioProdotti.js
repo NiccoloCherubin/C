@@ -15,22 +15,16 @@ fetch('json/prodotti.json')
       img.alt = prodotto.descrizione_img;
       img.classList.add('prodotto-img');
       
-      // Crea la descrizione dell'immagine (h3)
-      const descrizioneImg = document.createElement('h3');
-      descrizioneImg.textContent = prodotto.descrizione_img;
-      descrizioneImg.classList.add('img-desc');
+      // Crea il prezzo del prodotto (h3)
+      const prezzoProdotto = document.createElement('h3');
+      prezzoProdotto.textContent = prodotto.prezzo;
+      prezzoProdotto.classList.add('prodotto-prezzo');
       
-      // Crea la descrizione del prodotto (p)
-      const descrizioneProdotto = document.createElement('p');
-      descrizioneProdotto.textContent = prodotto.descrizione;
-      descrizioneProdotto.classList.add('prodotto-desc');
-      
-      // Aggiungi gli elementi (immagine, descrizione immagine, descrizione prodotto) al div del prodotto
+      // Aggiungi gli elementi (immagine e prezzo) al div del prodotto
       prodottoDiv.appendChild(img);
-      prodottoDiv.appendChild(descrizioneImg);
-      prodottoDiv.appendChild(descrizioneProdotto);
+      prodottoDiv.appendChild(prezzoProdotto);
       
-      // Aggiungi il prodotto alla pagina
+      // Aggiungi il prodotto al contenitore
       container.appendChild(prodottoDiv);
     });
   })
