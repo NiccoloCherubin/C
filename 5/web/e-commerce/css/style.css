@@ -57,10 +57,10 @@ html, body {
 /* Navbar mobile - Per dispositivi con larghezza minore di 768px */
 @media (max-width: 768px) {
     .navbar-brand {
-        font-size: 24px; /* Riduci la dimensione del logo su dispositivi piccoli */
+        font-size: 24px; /* Riduce la dimensione del logo su dispositivi piccoli */
     }
     .navbar-nav .nav-link {
-        font-size: 16px; /* Riduci la dimensione dei link su dispositivi piccoli */
+        font-size: 16px; /* Riduce la dimensione dei link su dispositivi piccoli */
     }
 }
 
@@ -70,17 +70,16 @@ footer {
     color: white;
     text-align: center;
     padding: 20px 0;
-    margin-top: auto; /* Questo spinge il footer sempre al fondo della pagina */
+    margin-top: auto; /* spinge il footer sempre al fondo della pagina */
 }
 
-/* Stile per i link nel footer */
 footer a {
     color: white;
     text-decoration: none;
     transition: color 0.3s ease; /* Transizione morbida */
 }
 
-/* Hover sui link del footer */
+
 footer a:hover {
     color: var(--highlight-color); /* Colore dorato per i link del footer */
 }
@@ -88,7 +87,7 @@ footer a:hover {
 /* Media query per schermi più piccoli (mobile) */
 @media (max-width: 576px) {
     body {
-        padding: 15px; /* Riduci il padding sui dispositivi molto piccoli */
+        padding: 15px; /* Riduce il padding sui dispositivi molto piccoli */
     }
 
     .navbar-nav .nav-link {
@@ -96,6 +95,6 @@ footer a:hover {
     }
 
     footer {
-        font-size: 14px; /* Riduci la dimensione del testo del footer */
+        font-size: 14px; /* Riduce la dimensione del testo del footer */
     }
 }
