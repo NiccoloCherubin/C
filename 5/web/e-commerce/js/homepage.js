@@ -60,22 +60,3 @@ fetch('json/prodotti.json')
   .catch(error => {
     console.error("Errore nel caricamento dei prodotti: ", error);
   });
-
-// Funzione per aggiungere un prodotto al carrello
-function aggiungiAlCarrello(prodotto) {
-  let carrello = JSON.parse(localStorage.getItem('carrello')) || [];
-
-  // Verifica se il prodotto è già nel carrello
-  const prodottoEsistente = carrello.find(p => p.id === prodotto.id);
-  if (prodottoEsistente) {
-    prodottoEsistente.quantita += 1;  // Aumenta la quantità se il prodotto esiste già
-  } else {
-    prodotto.quantita = 1;  // Imposta la quantità a 1
-    carrello.push(prodotto);
-  }
-
-  // Salva il carrello nel localStorage
-  localStorage.setItem('carrello', JSON.stringify(carrello));
-
-  alert("Prodotto aggiunto al carrello!");
-}
