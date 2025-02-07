@@ -28,6 +28,7 @@
 .card {
     transition: transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Aggiungi un'ombra per un effetto visivo */
+    margin-bottom: 30px; /* Aggiungi spazio sotto ogni card */
 }
 
 .card:hover {
@@ -38,6 +39,14 @@
     width: 100%;            /* Assicura che l'immagine occupi tutta la larghezza della card */
     height: 200px;          /* Imposta un'altezza fissa per le immagini */
     object-fit: cover;      /* Mantiene le proporzioni e taglia l'immagine se necessario */
+}
+
+/* Ridurre la dimensione delle card su schermi larghi */
+@media (min-width: 1200px) {
+    .card {
+        max-width: 350px;  /* Imposta una larghezza massima per la card su schermi più grandi */
+        margin: 0 auto;    /* Centra la card */
+    }
 }
 
 footer {

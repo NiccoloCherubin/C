@@ -1,6 +1,5 @@
-// Recupera i dati dal file JSON
 fetch('json/prodotti.json')
-  .then(response => response.json()) // Converte la risposta in formato JSON
+  .then(response => response.json())
   .then(prodotti => {
     const container = document.getElementById('prodotti-container');
 
@@ -10,7 +9,7 @@ fetch('json/prodotti.json')
     // Per ogni prodotto, crea dinamicamente gli elementi HTML
     primiDueProdotti.forEach(prodotto => {
       const prodottoDiv = document.createElement('div');
-      prodottoDiv.classList.add('col-md-6', 'mb-4'); // Impostiamo la colonna per 2 per riga (2 prodotti)
+      prodottoDiv.classList.add('col-md-6', 'mb-4');
 
       // Crea la card per ogni prodotto
       const cardDiv = document.createElement('div');
@@ -20,7 +19,7 @@ fetch('json/prodotti.json')
       const img = document.createElement('img');
       img.src = prodotto.immagine;
       img.alt = prodotto.descrizione_img;
-      img.classList.add('card-img-top', 'prodotto-img');
+      img.classList.add('card-img-top');
 
       // Crea il corpo della card
       const cardBody = document.createElement('div');
@@ -37,10 +36,10 @@ fetch('json/prodotti.json')
       prezzoProdotto.classList.add('card-subtitle', 'mb-2', 'text-muted');
 
       // Crea il bottone per aggiungere al carrello
-      const addButton = document.createElement('a');
-      addButton.href = '#';
+      const addButton = document.createElement('button');
       addButton.classList.add('btn', 'btn-primary');
       addButton.textContent = 'Aggiungi al carrello';
+      addButton.onclick = () => aggiungiAlCarrello(prodotto);  // Aggiungi l'evento per il carrello
 
       // Aggiungi gli elementi alla card
       cardBody.appendChild(nomeProdotto);
@@ -61,3 +60,22 @@ fetch('json/prodotti.json')
   .catch(error => {
     console.error("Errore nel caricamento dei prodotti: ", error);
   });
+
+// Funzione per aggiungere un prodotto al carrello
+function aggiungiAlCarrello(prodotto) {
+  let carrello = JSON.parse(localStorage.getItem('carrello')) || [];
+
+  // Verifica se il prodotto è già nel carrello
+  const prodottoEsistente = carrello.find(p => p.id === prodotto.id);
+  if (prodottoEsistente) {
+    prodottoEsistente.quantita += 1;  // Aumenta la quantità se il prodotto esiste già
+  } else {
+    prodotto.quantita = 1;  // Imposta la quantità a 1
+    carrello.push(prodotto);
+  }
+
+  // Salva il carrello nel localStorage
+  localStorage.setItem('carrello', JSON.stringify(carrello));
+
+  alert("Prodotto aggiunto al carrello!");
+}
