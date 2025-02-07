@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const prodottoId = parseInt(urlParams.get('id'));
 
     // Carica i prodotti dal file JSON
-    fetch('prodotti.json')
+    fetch('json/prodotti.json')
         .then(response => response.json())
         .then(prodotti => {
             // Trova il prodotto con l'ID corrispondente
@@ -13,20 +13,63 @@ document.addEventListener('DOMContentLoaded', function () {
             if (prodotto) {
                 const prodottoContainer = document.getElementById('prodotto-container');
                 
-                // Mostra i dettagli del prodotto
-                prodottoContainer.innerHTML = `
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="${prodotto.immagine}" class="img-fluid" alt="${prodotto.descrizione_img}">
-                        </div>
-                        <div class="col-md-6">
-                            <h2>${prodotto.nome}</h2>
-                            <p>${prodotto.prezzo}</p>
-                            <p><strong>Descrizione:</strong> ${prodotto.descrizione_img}</p>
-                            <button class="btn btn-primary">Aggiungi al carrello</button>
-                        </div>
-                    </div>
-                `;
+                // Creiamo gli elementi in modo dinamico e li aggiungiamo al DOM
+
+                // Contenitore principale (row)
+                const rowDiv = document.createElement('div');
+                rowDiv.classList.add('row');
+
+                // Colonna per l'immagine
+                const colImgDiv = document.createElement('div');
+                colImgDiv.classList.add('col-md-6');
+                const img = document.createElement('img');
+                img.src = prodotto.immagine;
+                img.classList.add('img-fluid');
+                img.alt = prodotto.descrizione_img;
+                colImgDiv.appendChild(img);
+
+                // Colonna per il nome, prezzo e bottone
+                const colInfoDiv = document.createElement('div');
+                colInfoDiv.classList.add('col-md-6');
+                const nomeProdotto = document.createElement('h2');
+                nomeProdotto.textContent = prodotto.nome;
+                const prezzoProdotto = document.createElement('p');
+                prezzoProdotto.innerHTML = `<strong>Prezzo:</strong> ${prodotto.prezzo}`;
+                const addButton = document.createElement('button');
+                addButton.classList.add('btn', 'btn-primary');
+                addButton.textContent = 'Aggiungi al carrello';
+
+                // Aggiungiamo nome, prezzo e bottone alla colonna
+                colInfoDiv.appendChild(nomeProdotto);
+                colInfoDiv.appendChild(prezzoProdotto);
+                colInfoDiv.appendChild(addButton);
+
+                // Aggiungiamo le due colonne alla riga
+                rowDiv.appendChild(colImgDiv);
+                rowDiv.appendChild(colInfoDiv);
+
+                // Aggiungiamo la riga al contenitore
+                prodottoContainer.appendChild(rowDiv);
+
+                // Descrizione del prodotto sotto la riga
+                const rowDescrizioneDiv = document.createElement('div');
+                rowDescrizioneDiv.classList.add('row', 'mt-4');
+                const colDescrizioneDiv = document.createElement('div');
+                colDescrizioneDiv.classList.add('col-md-12');
+                const descrizioneHeader = document.createElement('h3');
+                descrizioneHeader.textContent = 'Descrizione';
+                const descrizioneP = document.createElement('p');
+                descrizioneP.textContent = prodotto.descrizione;
+
+                // Aggiungiamo la descrizione alla colonna
+                colDescrizioneDiv.appendChild(descrizioneHeader);
+                colDescrizioneDiv.appendChild(descrizioneP);
+
+                // Aggiungiamo la colonna di descrizione alla riga
+                rowDescrizioneDiv.appendChild(colDescrizioneDiv);
+
+                // Aggiungiamo la riga di descrizione al contenitore
+                prodottoContainer.appendChild(rowDescrizioneDiv);
             } else {
                 // Se il prodotto non viene trovato
                 document.getElementById('prodotto-container').innerHTML = '<p>Prodotto non trovato.</p>';
