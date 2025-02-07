@@ -39,6 +39,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 addButton.classList.add('btn', 'btn-primary');
                 addButton.textContent = 'Aggiungi al carrello';
 
+                // Aggiungiamo l'evento di click al bottone per aggiungere al carrello
+                addButton.addEventListener('click', () => aggiungiAlCarrello(prodotto));
+
                 // Aggiungiamo nome, prezzo e bottone alla colonna
                 colInfoDiv.appendChild(nomeProdotto);
                 colInfoDiv.appendChild(prezzoProdotto);
