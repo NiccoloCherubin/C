@@ -1,7 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Recupera il carrello da localStorage
     let carrello = JSON.parse(localStorage.getItem('carrello')) || [];
     const carrelloContainer = document.getElementById('carrello-container');
+    const totaleCarrelloElem = document.getElementById('totale-carrello');
+    const scontoApp = document.getElementById('sconto-applicato');
+
+    // Funzione per calcolare il totale del carrello
+    function calcolaTotale() {
+    let totale = 0;
+    carrello.forEach(prodotto => {
+        // Rimuovi il simbolo dell'euro e converte in numero
+        const prezzo = parseFloat(prodotto.prezzo.replace('€', '').trim()); // Rimuovi simbolo e spazio
+        const quantita = parseInt(prodotto.quantita, 10); // Assicurati che sia un intero
+        if (!isNaN(prezzo) && !isNaN(quantita)) {
+            totale += prezzo * quantita;
+        }
+    });
+    totaleCarrelloElem.textContent = totale.toFixed(2);
+}
+
 
     // Se il carrello è vuoto
     if (carrello.length === 0) {
@@ -28,19 +44,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Funzione per rimuovere un prodotto dal carrello
     window.rimuoviDalCarrello = function(id) {
-        // Filtra il carrello per rimuovere il prodotto con l'id corrispondente
         carrello = carrello.filter(p => p.id !== id);
-        // Salva nuovamente il carrello aggiornato nel localStorage
         localStorage.setItem('carrello', JSON.stringify(carrello));
-        // Ricarica la pagina per riflettere il cambiamento
         location.reload();
     };
 
     // Funzione per svuotare il carrello
     window.svuotaCarrello = function() {
-        // Rimuovi il carrello dal localStorage
         localStorage.removeItem('carrello');
-        // Ricarica la pagina per aggiornare lo stato
         location.reload();
     };
+
+    // Funzione per applicare il codice sconto
+    window.applicaCodiceSconto = function() {
+        const codiceSconto = document.getElementById('codice-sconto').value.trim().toUpperCase();
+        let sconto = 0;
+    
+        // Codici sconto predefiniti (puoi modificarli)
+        if (codiceSconto === "A") {
+            sconto = 0.10; // 10% di sconto
+        } else if (codiceSconto === "B") {
+            sconto = 0.20; // 20% di sconto
+        } else {
+            // Codice sconto non valido
+            scontoApp.textContent = "Codice sconto non valido!";
+            return;
+        }
+    
+        // Calcola il totale
+        const totale = parseFloat(totaleCarrelloElem.textContent); // Ottieni il totale corrente
+        const totaleScontato = totale * (1 - sconto); // Applica lo sconto
+    
+        // Mostra il nuovo totale scontato
+        totaleCarrelloElem.textContent = totaleScontato.toFixed(2);
+    
+        // Mostra il messaggio di sconto applicato
+        scontoApp.textContent = `Sconto applicato: ${Math.round(sconto * 100)}%`;
+    
+        // Rimuovi il codice sconto dalla barra di input
+        document.getElementById('codice-sconto').value = '';
+    };
+    
+
+    // Calcola il totale iniziale
+    calcolaTotale();
 });

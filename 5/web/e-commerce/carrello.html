@@ -40,6 +40,20 @@
             <a href="checkout.html" class="btn btn-success">Procedi al checkout</a>
         </div>
     </div>
+
+    <!-- Sezione per il codice sconto -->
+    <div class="mt-4">
+        <h5>Hai un codice sconto?</h5>
+        <input type="text" id="codice-sconto" class="form-control" placeholder="Inserisci il codice sconto">
+        <button class="btn btn-primary mt-2" onclick="applicaCodiceSconto()">Applica codice sconto</button>
+        <p id="sconto-applicato" class="mt-2" style="color: green;"></p>
+    </div>
+
+    <!-- Totale del carrello-->
+    <div class="mt-3">
+        <h4>Totale: <span id="totale-carrello">0,00</span> €</h4>
+    </div>
+
         <!-- Footer comune a tutte le pagine -->
         <footer class="bg-dark text-white py-4">
             <div class="container text-center">
