@@ -1,0 +1,40 @@
+[
+    {
+      "id": 1,
+      "nome": "Bundle 1",
+      "prodotti": [
+        {
+          "id": 1,
+          "nome": "Prodotto 1",
+          "prezzo": 10.99
+        },
+        {
+          "id": 2,
+          "nome": "Prodotto 2",
+          "prezzo": 9.99
+        }
+      ],
+      "prezzo": 19.99,
+      "immagine": "bundle1.jpg",
+      "descrizione_img": "Immagine del bundle 1"
+    },
+    {
+      "id": 2,
+      "nome": "Bundle 2",
+      "prodotti": [
+        {
+          "id": 3,
+          "nome": "Prodotto 3",
+          "prezzo": 12.99
+        },
+        {
+          "id": 4,
+          "nome": "Prodotto 4",
+          "prezzo": 11.99
+        }
+      ],
+      "prezzo": 24.99,
+      "immagine": "bundle2.jpg",
+      "descrizione_img": "Immagine del bundle 2"
+    }
+  ]
