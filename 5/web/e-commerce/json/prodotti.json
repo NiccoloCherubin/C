@@ -1,34 +1,122 @@
 [
   {
     "id": 1,
-    "nome": "Prodotto 1",
-    "prezzo": "€19.99",
+    "nome": "Punta da Trapano",
+    "prezzo_base": "€9.99",
     "immagine": "https://media.istockphoto.com/id/1602458519/it/foto/esplosione-di-polvere-colorata-su-sfondo-bianco.jpg?s=612x612&w=0&k=20&c=p8zsmnvNd6Nj2I0cTE8esB79X_CnjkwH4FUTp3U9_eA=",
-    "descrizione_img": "Immagine del Prodotto 1",
-    "descrizione": "Questa è la descrizione dettagliata del Prodotto 1. È un prodotto molto utile e di alta qualità."
+    "descrizione_img": "Punta da trapano per muro",
+    "descrizione": "Punta da trapano di alta qualità per forare muri di cemento, mattoni o pietra. Perfetta per lavori di costruzione e ristrutturazione.",
+    "misure_disponibili": [
+      {
+        "misura": "5mm",
+        "prezzo": "€9.99"
+      },
+      {
+        "misura": "8mm",
+        "prezzo": "€12.99"
+      },
+      {
+        "misura": "10mm",
+        "prezzo": "€15.99"
+      }
+    ]
   },
   {
     "id": 2,
-    "nome": "Prodotto 2",
-    "prezzo": "€29.99",
-    "immagine": "https://media.istockphoto.com/id/1602458519/it/foto/esplosione-di-polvere-colorata-su-sfondo-bianco.jpg?s=612x612&w=0&k=20&c=p8zsmnvNd6Nj2I0cTE8esB79X_CnjkwH4FUTp3U9_eA=",
-    "descrizione_img": "Immagine del Prodotto 2",
-    "descrizione": "Questa è la descrizione dettagliata del Prodotto 2. È un altro prodotto fantastico con funzionalità eccezionali."
+    "nome": "Set di Viti in Acciaio Inox",
+    "prezzo_base": "€7.99",
+    "immagine": "https://media.istockphoto.com/id/170731809/it/foto/set-di-viti-da-parete.jpg?s=612x612&w=0&k=20&c=ltGiNePr9gIMJ1YZQ7VNrjQ57_FJPRHkGVu5eVO-Qrc=",
+    "descrizione_img": "Set di viti in acciaio inox",
+    "descrizione": "Set completo di viti in acciaio inox resistenti alla corrosione, perfette per lavori su legno, metallo e plastiche dure.",
+    "misure_disponibili": [
+      {
+        "misura": "4mm x 20mm",
+        "prezzo": "€7.99"
+      },
+      {
+        "misura": "5mm x 30mm",
+        "prezzo": "€9.99"
+      },
+      {
+        "misura": "6mm x 40mm",
+        "prezzo": "€11.99"
+      }
+    ]
   },
   {
     "id": 3,
-    "nome": "Prodotto 3",
-    "prezzo": "€39.99",
-    "immagine": "https://media.istockphoto.com/id/1602458519/it/foto/esplosione-di-polvere-colorata-su-sfondo-bianco.jpg?s=612x612&w=0&k=20&c=p8zsmnvNd6Nj2I0cTE8esB79X_CnjkwH4FUTp3U9_eA=",
-    "descrizione_img": "Immagine del Prodotto 3",
-    "descrizione": "Questa è la descrizione dettagliata del Prodotto 3. Un prodotto versatile per soddisfare le tue esigenze."
+    "nome": "Trapano a Percussione 800W",
+    "prezzo_base": "€69.99",
+    "immagine": "https://media.istockphoto.com/id/1300198969/it/foto/trapano-a-percussione.jpg?s=612x612&w=0&k=20&c=H8J0KqXG4Q1bFQH-0P_YFq9It9Yk0EO90Qlv2vE58LM=",
+    "descrizione_img": "Trapano a percussione 800W",
+    "descrizione": "Trapano potente a percussione da 800W, ideale per forare cemento, muratura, legno e metallo. Include varie punte per ogni tipo di lavoro.",
+    "misure_disponibili": [
+      {
+        "misura": "800W",
+        "prezzo": "€69.99"
+      }
+    ]
   },
   {
     "id": 4,
-    "nome": "Prodotto 4",
-    "prezzo": "€49.99",
-    "immagine": "https://media.istockphoto.com/id/1602458519/it/foto/esplosione-di-polvere-colorata-su-sfondo-bianco.jpg?s=612x612&w=0&k=20&c=p8zsmnvNd6Nj2I0cTE8esB79X_CnjkwH4FUTp3U9_eA=",
-    "descrizione_img": "Immagine del Prodotto 4",
-    "descrizione": "Questa è la descrizione dettagliata del Prodotto 4. Perfetto per chi cerca la qualità e l'affidabilità."
+    "nome": "Chiave Inglese Regolabile",
+    "prezzo_base": "€15.99",
+    "immagine": "https://media.istockphoto.com/id/1401501897/it/foto/chiave-inglese-regolabile.jpg?s=612x612&w=0&k=20&c=yb88E2U3uOwX8vHhBZ4g_hMZzO7YkaWV0rbipFMqZKY=",
+    "descrizione_img": "Chiave inglese regolabile",
+    "descrizione": "Chiave inglese regolabile in acciaio, perfetta per serraggi e lavori su tubazioni, dadi e bulloni di dimensioni variabili.",
+    "misure_disponibili": [
+      {
+        "misura": "6\"",
+        "prezzo": "€15.99"
+      },
+      {
+        "misura": "8\"",
+        "prezzo": "€18.99"
+      },
+      {
+        "misura": "10\"",
+        "prezzo": "€21.99"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "nome": "Tasselli per Muro in Nylon",
+    "prezzo_base": "€4.99",
+    "immagine": "https://media.istockphoto.com/id/914825844/it/foto/tasselli-in-nylon.jpg?s=612x612&w=0&k=20&c=ch9cTqmv9YfYhI1hU6CzfqZXjwsOhA9y7rfzRAxSC8w=",
+    "descrizione_img": "Tasselli per muro in nylon",
+    "descrizione": "Tasselli in nylon resistenti, ideali per il fissaggio di viti in muro, mattoni e cemento. Disponibili in vari formati e misure.",
+    "misure_disponibili": [
+      {
+        "misura": "6mm",
+        "prezzo": "€4.99"
+      },
+      {
+        "misura": "8mm",
+        "prezzo": "€5.99"
+      },
+      {
+        "misura": "10mm",
+        "prezzo": "€6.99"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "nome": "Pinza Multifunzione",
+    "prezzo_base": "€22.99",
+    "immagine": "https://media.istockphoto.com/id/119014217/it/foto/pinza-multifunzione.jpg?s=612x612&w=0&k=20&c=VSO97I9PR5h8VwRO9AD7WflZu6Ch79ccbrjXqg6Ndu8=",
+    "descrizione_img": "Pinza multifunzione",
+    "descrizione": "Pinza multifunzione robusta, perfetta per tagliare, stringere e tenere oggetti durante il lavoro. Utile per una vasta gamma di progetti.",
+    "misure_disponibili": [
+      {
+        "misura": "200mm",
+        "prezzo": "€22.99"
+      },
+      {
+        "misura": "250mm",
+        "prezzo": "€25.99"
+      }
+    ]
   }
 ]
