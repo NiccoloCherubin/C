@@ -96,6 +96,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Funzione per aggiungere il prodotto al carrello
 function aggiungiAlCarrello(prodotto) {
-    // Logica per aggiungere il prodotto al carrello (questa parte dipende dal tuo sistema di gestione del carrello)
+    // Logica per aggiungere il prodotto al carrello 
     console.log(`Prodotto aggiunto al carrello: ${prodotto.nome}`);
 }
