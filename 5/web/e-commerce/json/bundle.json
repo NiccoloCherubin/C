@@ -1,40 +1,62 @@
 [
-    {
+  {
       "id": 1,
-      "nome": "Bundle 1",
+      "nome": "Bundle Strumenti Base",
       "prodotti": [
-        {
-          "id": 1,
-          "nome": "Prodotto 1",
-          "prezzo": 10.99
-        },
-        {
-          "id": 2,
-          "nome": "Prodotto 2",
-          "prezzo": 9.99
-        }
+          {
+              "id": 1,
+              "nome": "Punta da trapano",
+              "prezzo": 10.99,
+              "immagine": "punta_trapano.jpg",
+              "descrizione_img": "Immagine della punta da trapano"
+          },
+          {
+              "id": 2,
+              "nome": "Martello",
+              "prezzo": 12.99,
+              "immagine": "martello.jpg",
+              "descrizione_img": "Immagine del martello"
+          },
+          {
+              "id": 3,
+              "nome": "Cacciavite",
+              "prezzo": 8.99,
+              "immagine": "cacciavite.jpg",
+              "descrizione_img": "Immagine del cacciavite"
+          }
       ],
-      "prezzo": 19.99,
-      "immagine": "bundle1.jpg",
-      "descrizione_img": "Immagine del bundle 1"
-    },
-    {
+      "prezzo": 29.99,
+      "immagine": "bundle_base.jpg",
+      "descrizione_img": "Immagine del bundle Strumenti Base"
+  },
+  {
       "id": 2,
-      "nome": "Bundle 2",
+      "nome": "Bundle Strumenti Avanzato",
       "prodotti": [
-        {
-          "id": 3,
-          "nome": "Prodotto 3",
-          "prezzo": 12.99
-        },
-        {
-          "id": 4,
-          "nome": "Prodotto 4",
-          "prezzo": 11.99
-        }
+          {
+              "id": 4,
+              "nome": "Trapano elettrico",
+              "prezzo": 49.99,
+              "immagine": "trapano_elettrico.jpg",
+              "descrizione_img": "Immagine del trapano elettrico"
+          },
+          {
+              "id": 5,
+              "nome": "Chiave inglese",
+              "prezzo": 14.99,
+              "immagine": "chiave_inglese.jpg",
+              "descrizione_img": "Immagine della chiave inglese"
+          },
+          {
+              "id": 6,
+              "nome": "Seghetto alternativo",
+              "prezzo": 39.99,
+              "immagine": "seghetto_alternativo.jpg",
+              "descrizione_img": "Immagine del seghetto alternativo"
+          }
       ],
-      "prezzo": 24.99,
-      "immagine": "bundle2.jpg",
-      "descrizione_img": "Immagine del bundle 2"
-    }
-  ]
+      "prezzo": 99.99,
+      "immagine": "bundle_avanzato.jpg",
+      "descrizione_img": "Immagine del bundle Strumenti Avanzato"
+  }
+]
