@@ -35,12 +35,33 @@ document.addEventListener('DOMContentLoaded', function () {
                 nomeProdotto.textContent = prodotto.nome;
                 const prezzoProdotto = document.createElement('p');
                 prezzoProdotto.innerHTML = `<strong>Prezzo:</strong> ${prodotto.prezzo}`;
+                
+                // Se il prodotto ha delle misure disponibili, aggiungi un selettore
+                if (prodotto.misure_disponibili && prodotto.misure_disponibili.length > 0) {
+                    const selettoreMisura = document.createElement('select');
+                    selettoreMisura.classList.add('form-select');
+                    selettoreMisura.id = 'misura-select';
+
+                    prodotto.misure_disponibili.forEach(misura => {
+                        const option = document.createElement('option');
+                        option.value = misura.misura;
+                        option.textContent = `${misura.misura} - ${misura.prezzo}`;
+                        selettoreMisura.appendChild(option);
+                    });
+
+                    colInfoDiv.appendChild(selettoreMisura);
+                }
+
                 const addButton = document.createElement('button');
                 addButton.classList.add('btn', 'btn-primary');
                 addButton.textContent = 'Aggiungi al carrello';
 
                 // Aggiungiamo l'evento di click al bottone per aggiungere al carrello
-                addButton.addEventListener('click', () => aggiungiAlCarrello(prodotto));
+                addButton.addEventListener('click', () => {
+                    const misuraSelezionata = document.getElementById('misura-select') ? document.getElementById('misura-select').value : null;
+                    const prodottoConMisura = misuraSelezionata ? {...prodotto, misura: misuraSelezionata} : prodotto;
+                    aggiungiAlCarrello(prodottoConMisura);
+                });
 
                 // Aggiungiamo nome, prezzo e bottone alla colonna
                 colInfoDiv.appendChild(nomeProdotto);
