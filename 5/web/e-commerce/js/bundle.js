@@ -79,45 +79,41 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Funzione per aggiungere il prodotto (bundle) al carrello
 function aggiungiAlCarrello(bundle) {
-    // Recupera il carrello dal localStorage o crea un nuovo carrello vuoto
     let carrello = JSON.parse(localStorage.getItem('carrello')) || [];
 
-    // Crea il prodotto del bundle come un oggetto
-    const prodottoBundle = {
-        id: bundle.id,
-        nome: bundle.nome,
-        prezzo: bundle.prezzo,
-        immagine: bundle.immagine,
-        descrizione_img: bundle.descrizione_img,
-        prodotti: [],  // Lista dei prodotti nel bundle
-        quantita: 1
-    };
+    // Controlla se il bundle è già nel carrello
+    let prodottoEsistente = carrello.find(p => p.id === bundle.id);
 
-    // Aggiungi i prodotti del bundle al carrello
-    bundle.prodotti.forEach(prod => {
-        // Cerca il prodotto nel catalogo principale
-        const prodottoCatalogo = prodotti.find(p => p.id === prod.id);
-        
-        if (prodottoCatalogo) {
-            // Aggiungi il prodotto al carrello (al prodottoBundle)
-            prodottoBundle.prodotti.push({
-                id: prodottoCatalogo.id,
-                nome: prodottoCatalogo.nome,
-                prezzo: prodottoCatalogo.prezzo_base,
-                immagine: prodottoCatalogo.immagine,
-                descrizione_img: prodottoCatalogo.descrizione_img
-            });
-        }
-    });
+    if (prodottoEsistente) {
+        prodottoEsistente.quantita++;
+    } else {
+        let nuovoBundle = {
+            id: bundle.id,
+            nome: bundle.nome,
+            prezzo: bundle.prezzo,
+            immagine: bundle.immagine,
+            descrizione_img: bundle.descrizione_img,
+            prodotti: bundle.prodotti,  // Mantiene la lista prodotti
+            quantita: 1
+        };
+
+        carrello.push(nuovoBundle);
+    }
+
+    localStorage.setItem('carrello', JSON.stringify(carrello));
+
+    alert(`${bundle.nome} è stato aggiunto al carrello!`);
+}
+
 
     // Verifica se il bundle è già nel carrello
     const prodottoEsistente = carrello.find(p => p.id === prodottoBundle.id);
 
     if (prodottoEsistente) {
-        // Se il prodotto è già nel carrello, incrementa la quantità
+        // Se il prodotto è già nel carrello ne incrementa la quantità
         prodottoEsistente.quantita++;
     } else {
-        // Altrimenti, aggiungi il prodotto al carrello con una quantità di 1
+        //  aggiunge il prodotto al carrello con una quantità di 1
         carrello.push(prodottoBundle);
     }
 
@@ -126,4 +122,3 @@ function aggiungiAlCarrello(bundle) {
 
     // Notifica l'utente che il bundle è stato aggiunto
     alert(`${prodottoBundle.nome} è stato aggiunto al carrello!`);
-}

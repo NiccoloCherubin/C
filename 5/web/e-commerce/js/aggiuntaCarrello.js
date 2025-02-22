@@ -11,10 +11,10 @@ function aggiungiAlCarrello(prodotto) {
     const prodottoEsistente = carrello.find(p => p.id === prodotto.id && p.misura === prodotto.misura);
     
     if (prodottoEsistente) {
-        // Se il prodotto è già nel carrello, incrementa la quantità
+        // Se il prodotto è già nel carrello ne incrementa la quantità
         prodottoEsistente.quantita++;
     } else {
-        // Altrimenti, aggiungi il prodotto al carrello con una quantità di 1
+        //aggiunge il prodotto al carrello con una quantità di 1
         prodotto.quantita = 1;
         carrello.push(prodotto);
     }
@@ -22,6 +22,6 @@ function aggiungiAlCarrello(prodotto) {
     // Salva il carrello nel localStorage
     localStorage.setItem('carrello', JSON.stringify(carrello));
 
-    // Opzionale: notifica all'utente che il prodotto è stato aggiunto
+    // notifica all'utente che il prodotto è stato aggiunto
     alert(`${prodotto.nome} è stato aggiunto al carrello!`);
 }

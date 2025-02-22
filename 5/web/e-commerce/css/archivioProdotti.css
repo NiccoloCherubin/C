@@ -1,4 +1,4 @@
-/* Rimuoviamo la gestione della griglia da CSS, lascia che Bootstrap gestisca la griglia */
+/* Card: Imposta la posizione della card in modo che l'immagine venga centrata */
 .prodotto-item {
     background-color: #fff;
     padding: 15px;
@@ -8,15 +8,19 @@
     display: flex;
     flex-direction: column; /* Allinea gli elementi verticalmente */
     justify-content: space-between; /* Garantisce che il contenuto sia distribuito correttamente */
+    height: 100%; /* Garantisce che tutte le card abbiano la stessa altezza */
 }
 
-/* Stile per l'immagine del prodotto */
+/* Stile per l'immagine del prodotto, centrato all'interno della card */
 .prodotto-img {
-    max-width: 100%;
-    height: auto;
+    height: 200px; /* Imposta un'altezza fissa per l'immagine */
+    width: 100%; /* Fa in modo che l'immagine occupi tutta la larghezza */
+    object-fit: cover; /* Mantiene l'aspetto dell'immagine senza distorsioni */
     border-radius: 8px;
     margin-bottom: 10px;
-    object-fit: cover; /* Mantiene l'aspetto dell'immagine senza distorsioni */
+    display: block; /* Rimuove gli spazi indesiderati sotto l'immagine */
+    margin-left: auto; /* Centra l'immagine orizzontalmente */
+    margin-right: auto; /* Centra l'immagine orizzontalmente */
 }
 
 /* Prezzo del prodotto */
@@ -25,4 +29,11 @@
     font-weight: bold;
     color: #333;
     margin-top: auto; /* Spinge il prezzo verso il basso */
+}
+
+/* Pulsanti: Imposta il bottone per occupare tutta la larghezza */
+.card-body .btn {
+    width: 100%; /* Fa in modo che il bottone sia largo quanto la card */
+    padding: 10px;
+    font-size: 16px;
 }

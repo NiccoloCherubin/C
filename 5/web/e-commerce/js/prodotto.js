@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Ottieni l'ID del prodotto dalla URL
+    // Ottiene l'ID del prodotto dalla URL
     const urlParams = new URLSearchParams(window.location.search);
     const prodottoId = parseInt(urlParams.get('id'));
 
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (prodotto) {
                 const prodottoContainer = document.getElementById('prodotto-container');
                 
-                // Creiamo gli elementi in modo dinamico e li aggiungiamo al DOM
+                // Crea elementi in modo dinamico e li aggiunge al DOM
 
                 // Contenitore principale (row)
                 const rowDiv = document.createElement('div');
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const prezzoProdotto = document.createElement('p');
                 prezzoProdotto.innerHTML = `<strong>Prezzo:</strong> ${prodotto.prezzo}`;
                 
-                // Se il prodotto ha delle misure disponibili, aggiungi un selettore
+                // Se il prodotto ha delle misure disponibili, aggiunge un selettore
                 if (prodotto.misure_disponibili && prodotto.misure_disponibili.length > 0) {
                     const selettoreMisura = document.createElement('select');
                     selettoreMisura.classList.add('form-select');
@@ -56,23 +56,23 @@ document.addEventListener('DOMContentLoaded', function () {
                 addButton.classList.add('btn', 'btn-primary');
                 addButton.textContent = 'Aggiungi al carrello';
 
-                // Aggiungiamo l'evento di click al bottone per aggiungere al carrello
+                //  l'evento di click al bottone per aggiungere al carrello
                 addButton.addEventListener('click', () => {
                     const misuraSelezionata = document.getElementById('misura-select') ? document.getElementById('misura-select').value : null;
                     const prodottoConMisura = misuraSelezionata ? {...prodotto, misura: misuraSelezionata} : prodotto;
                     aggiungiAlCarrello(prodottoConMisura);
                 });
 
-                // Aggiungiamo nome, prezzo e bottone alla colonna
+                // Aggiunge nome, prezzo e bottone alla colonna
                 colInfoDiv.appendChild(nomeProdotto);
                 colInfoDiv.appendChild(prezzoProdotto);
                 colInfoDiv.appendChild(addButton);
 
-                // Aggiungiamo le due colonne alla riga
+                // Aggiunge le due colonne alla riga
                 rowDiv.appendChild(colImgDiv);
                 rowDiv.appendChild(colInfoDiv);
 
-                // Aggiungiamo la riga al contenitore
+                // Aggiunge la riga al contenitore
                 prodottoContainer.appendChild(rowDiv);
 
                 // Descrizione del prodotto sotto la riga
@@ -85,14 +85,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 const descrizioneP = document.createElement('p');
                 descrizioneP.textContent = prodotto.descrizione;
 
-                // Aggiungiamo la descrizione alla colonna
+                // Aggiunge la descrizione alla colonna
                 colDescrizioneDiv.appendChild(descrizioneHeader);
                 colDescrizioneDiv.appendChild(descrizioneP);
 
-                // Aggiungiamo la colonna di descrizione alla riga
+                // Aggiunge la colonna di descrizione alla riga
                 rowDescrizioneDiv.appendChild(colDescrizioneDiv);
 
-                // Aggiungiamo la riga di descrizione al contenitore
+                // Aggiunge la riga di descrizione al contenitore
                 prodottoContainer.appendChild(rowDescrizioneDiv);
             } else {
                 // Se il prodotto non viene trovato

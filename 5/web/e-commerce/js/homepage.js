@@ -39,21 +39,21 @@ fetch('json/prodotti.json')
       const addButton = document.createElement('button');
       addButton.classList.add('btn', 'btn-primary');
       addButton.textContent = 'Aggiungi al carrello';
-      addButton.onclick = () => aggiungiAlCarrello(prodotto);  // Aggiungi l'evento per il carrello
+      addButton.onclick = () => aggiungiAlCarrello(prodotto);  //evento per il carrello
 
-      // Aggiungi gli elementi alla card
+      // Aggiunge gli elementi alla card
       cardBody.appendChild(nomeProdotto);
       cardBody.appendChild(prezzoProdotto);
       cardBody.appendChild(addButton);
 
-      // Aggiungi immagine e corpo della card al div della card
+      // Aggiunge immagine e corpo della card al div della card
       cardDiv.appendChild(img);
       cardDiv.appendChild(cardBody);
 
-      // Aggiungi la card al div del prodotto
+      // Aggiunge la card al div del prodotto
       prodottoDiv.appendChild(cardDiv);
 
-      // Aggiungi il prodotto al contenitore principale
+      // Aggiunge il prodotto al contenitore principale
       container.appendChild(prodottoDiv);
     });
   })

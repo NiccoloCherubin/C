@@ -1,17 +1,76 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 800px;
 }
 
 #carrello-container {
     margin-top: 20px;
 }
 
-#carrello-container .d-flex {
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+.carrello-item {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
 }
 
-#carrello-container .d-flex button {
-    margin-left: 10px;
+.carrello-item img {
+    width: 80px;
+    height: auto;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.carrello-item .info {
+    flex-grow: 1;
+}
+
+.carrello-item .prezzo {
+    font-weight: bold;
+    color: #28a745;
+}
+
+.sconto-container {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+.sconto-container h5 {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.sconto-input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.sconto-input-group input {
+    flex-grow: 1;
+    max-width: 250px;
+}
+
+#sconto-applicato {
+    font-weight: bold;
+    margin-top: 10px;
+}
+#totale-carrello-container {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: right;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
 }

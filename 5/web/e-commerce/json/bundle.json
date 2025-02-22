@@ -7,26 +7,26 @@
               "id": 1,
               "nome": "Punta da trapano",
               "prezzo": 10.99,
-              "immagine": "punta_trapano.jpg",
+              "immagine": "https://www.fixon.it/image/cache/fischer/sdx-16-k-d-c-1000x1000.jpg",
               "descrizione_img": "Immagine della punta da trapano"
           },
           {
               "id": 2,
               "nome": "Martello",
               "prezzo": 12.99,
-              "immagine": "martello.jpg",
+              "immagine": "https://www.rtrmax.com/wp-content/uploads/2020/08/RH09317-2.jpg",
               "descrizione_img": "Immagine del martello"
           },
           {
               "id": 3,
               "nome": "Cacciavite",
               "prezzo": 8.99,
-              "immagine": "cacciavite.jpg",
+              "immagine": "https://www.toolshopitalia.it/uploads/images/beta-1260-cacciavite-taglio.jpg",
               "descrizione_img": "Immagine del cacciavite"
           }
       ],
       "prezzo": 29.99,
-      "immagine": "bundle_base.jpg",
+      "immagine": "https://media.istockphoto.com/id/1140180560/it/foto/esplosione-di-polvere-colorata-su-sfondo-nero.jpg?s=612x612&w=0&k=20&c=GEXA0Rr2homGuDTz5hzv42NG4DVM_sZJ2w3muj2Tzms=",
       "descrizione_img": "Immagine del bundle Strumenti Base"
   },
   {
@@ -37,26 +37,26 @@
               "id": 4,
               "nome": "Trapano elettrico",
               "prezzo": 49.99,
-              "immagine": "trapano_elettrico.jpg",
+              "immagine": "https://m.media-amazon.com/images/I/615p2cTm1UL.jpg",
               "descrizione_img": "Immagine del trapano elettrico"
           },
           {
               "id": 5,
               "nome": "Chiave inglese",
               "prezzo": 14.99,
-              "immagine": "chiave_inglese.jpg",
+              "immagine": "https://www.beps.it/items/grado/utensili--lampade-da-lavoro-e-torce/chiave/jpg/1767237_comp_900x900.jpg",
               "descrizione_img": "Immagine della chiave inglese"
           },
           {
               "id": 6,
               "nome": "Seghetto alternativo",
               "prezzo": 39.99,
-              "immagine": "seghetto_alternativo.jpg",
+              "immagine": "https://bilder.obi-italia.it/7cbc329b-cb9f-4ef3-8ae6-4402d815d76a/prZZO/419332_1748_1.jpg",
               "descrizione_img": "Immagine del seghetto alternativo"
           }
       ],
       "prezzo": 99.99,
-      "immagine": "bundle_avanzato.jpg",
+      "immagine": "https://www.studiolegaleadamo.it/wp-content/uploads/2024/10/Uso-immagini-copyright-foto.jpeg",
       "descrizione_img": "Immagine del bundle Strumenti Avanzato"
   }
 ]

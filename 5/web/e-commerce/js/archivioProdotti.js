@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(prodotti => {
             const container = document.getElementById('prodotti-container');
 
-            // Creiamo un contenitore con la classe "row" per la griglia di Bootstrap
+            //contenitore con la classe "row" per la griglia di Bootstrap
             const rowDiv = document.createElement('div');
             rowDiv.classList.add('row', 'g-4');  // Classe "row" per griglia e "g-4" per gap tra colonne
 
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 img.alt = prodotto.descrizione_img;
                 img.classList.add('card-img-top', 'prodotto-img');
 
-                // Aggiungi immagine al link
+                // Aggiunge immagine al link
                 linkProdotto.appendChild(img);
 
                 // Crea il corpo della card
@@ -45,14 +45,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 prezzoProdotto.textContent = prodotto.prezzo;
                 prezzoProdotto.classList.add('card-subtitle', 'mb-2', 'text-muted');
 
-                // Verifica se il prodotto ha opzioni (misure) disponibili
+                // Verifica se il prodotto ha opzioni disponibili
                 if (prodotto.misure_disponibili && prodotto.misure_disponibili.length > 0) {
                     // Se ha misure, non mostriamo il tasto "Aggiungi al carrello", ma aggiungiamo automaticamente la prima misura
                     const addButton = document.createElement('button');
                     addButton.classList.add('btn', 'btn-primary');
                     addButton.textContent = 'Aggiungi al carrello';
 
-                    // Aggiungi automaticamente la prima misura al carrello
+                    // Aggiunge automaticamente la prima misura al carrello
                     addButton.addEventListener('click', () => {
                         const primaMisura = prodotto.misure_disponibili[0];  // Seleziona la prima misura
                         prodotto.misura = primaMisura.misura;  // Aggiungi la misura al prodotto
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     cardBody.appendChild(prezzoProdotto);
                     cardBody.appendChild(addButton);
                 } else {
-                    // Se non ci sono misure, mostriamo comunque il bottone per aggiungere al carrello
+                    //bottone per aggiungere al carrello
                     const addButton = document.createElement('button');
                     addButton.classList.add('btn', 'btn-primary');
                     addButton.textContent = 'Aggiungi al carrello';
@@ -75,18 +75,18 @@ document.addEventListener('DOMContentLoaded', function () {
                     cardBody.appendChild(addButton);
                 }
 
-                // Aggiungi immagine e corpo della card al div della card
+                // immagine e corpo della card al div della card
                 cardDiv.appendChild(linkProdotto);
                 cardDiv.appendChild(cardBody);
 
-                // Aggiungi la card al div del prodotto
+                // la card al div del prodotto
                 prodottoDiv.appendChild(cardDiv);
 
-                // Aggiungi il prodotto alla riga
+                // il prodotto alla riga
                 rowDiv.appendChild(prodottoDiv);
             });
 
-            // Aggiungi la riga al contenitore
+            // la riga al contenitore
             container.appendChild(rowDiv);
         })
         .catch(error => {
