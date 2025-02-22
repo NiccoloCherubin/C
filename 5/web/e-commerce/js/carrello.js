@@ -10,10 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
     function calcolaTotale() {
         let totale = 0;
         carrello.forEach(prodotto => {
-            totale += parseFloat(prodotto.prezzo) * parseInt(prodotto.quantita, 10);
+            let prezzoPulito = parseFloat(prodotto.prezzo.replace('€', '').trim());
+            totale += prezzoPulito * parseInt(prodotto.quantita, 10);
         });
         totaleCarrelloElem.textContent = totale.toFixed(2);
     }
+    
 
     if (carrello.length === 0) {
         carrelloContainer.innerHTML = '<p>Il tuo carrello è vuoto!</p>';
